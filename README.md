@@ -1,19 +1,23 @@
 # Talos
 
-A payments-infrastructure marketing site: one-page product story for a fictional financial platform, built with Next.js 14, TypeScript, Tailwind CSS and shadcn/ui primitives.
+A payments-infrastructure marketing site: one route, fourteen sections plus the footer, built with Next.js 14, TypeScript, Tailwind CSS and shadcn/ui primitives.
 
-![Talos landing page hero: dark ink headline over a teal and amber mesh, with a checkout card, dashboard mock and customer logo row](docs/screenshot.webp)
+Live: <https://talos-payments.vercel.app>
+
+![Talos hero: a large Sora headline over a dark teal field, with a checkout card and an available-balance card floating beside it](docs/screenshot.webp)
 
 ## What it is
 
-A single marketing route (`/`) with eleven sections: hero, customer logos, product features, global scale, security, enterprise case studies, startup program, developer platform, no-code options, closing call to action and footer. It is a front-end demo: there is no backend, no real payments, no authentication and no CMS. Every form and link is a placeholder.
+A single page (`/`) that tells a fictional financial platform's story: hero with a checkout card stack, customer marquee, product cards, global payments, billing and pricing, platforms, issuing, global scale, use-case carousel, image-led enterprise cases, startup program, developer API, integrations bento, closing CTA and footer.
 
-## Why this over a landing template
+It is a front-end demo. There is no backend, no real payments, no authentication and no CMS; every form and link is a placeholder. The four enterprise stories, client names and metrics are invented.
 
-- **Own visual system.** Teal primary (`#0e7c6b`), amber accent (`#f2b84b`) and a deep ink (`#0a1f2c`), driven by theme tokens and the Tailwind scale rather than per-component palettes.
-- **Two typefaces with one job each.** Sora for headings, Inter for body copy, both self-hosted at build time through `next/font`.
-- **Fictional case studies only.** The four enterprise stories, their logos and the client logo row are invented brands, so no third-party trademark ships with the page.
-- **Section-level components.** Each band of the page is an isolated component with its own copy, which makes swapping a section a one-file change.
+## Why this instead of a landing template
+
+- **A warm, premium system.** Ink `#0a1f2c`, sand `#fbf7ef`, teal `#0e7c6b` and amber `#f2b84b` on a 24 px radius scale, with soft shadows, hairline borders and rounded surfaces.
+- **Sora for display, Inter for reading.** Both self-hosted at build time through `next/font`, with a size jump reserved for section openers.
+- **One visual device per band.** A card stack in the hero, a marquee for logos, a dark code panel for platforms, a real pricing table, a scroll-snap carousel for use cases and a bento grid for integrations. No section repeats another's layout.
+- **Section-level components.** `landing/block.tsx` provides `Shell`, `BlockHead` and `ArrowLink`; each band is an isolated component with its own copy.
 
 ## Quick start
 
@@ -38,9 +42,9 @@ Open <http://localhost:3000>.
 
 ## Theming
 
-`src/app/globals.css` holds the shadcn/ui CSS variables, the hero mesh gradient (`.refined-mesh`) and the heading font rule. `tailwind.config.ts` maps the brand colours (`primary`, `secondary`, `accent`, `brand-ink`, `brand-text`), radii and shadows.
+`tailwind.config.ts` holds the brand scale (`ink`, `sand`, `teal`, `amber`), radii, shadows and the marquee/float keyframes. `src/app/globals.css` holds the shadcn/ui variables plus the `.shell`, `.kicker`, `.arc-rings`, `.fade-x` and reduced-motion utilities.
 
-To rebrand: change the hex values in `tailwind.config.ts`, the mesh stops in `globals.css`, the font pair in `src/app/layout.tsx`, then the wordmark in `src/components/brand-wordmark.tsx` and the icon in `src/app/icon.svg`. Hardcoded brand hexes still exist inside the section components, so a full palette swap is a find-and-replace across `src/components/landing`.
+To rebrand: change the tokens in `tailwind.config.ts`, the Sora/Inter pair in `src/app/layout.tsx`, the wordmark in `src/components/brand-wordmark.tsx` and the icon in `src/app/icon.svg`. Sections use tokens; a few inline SVG strokes and the code panels keep literal colours.
 
 ## Project structure
 
@@ -49,24 +53,22 @@ src/
   app/                 App Router entry, metadata, global styles, icon
   components/
     brand-wordmark.tsx Wordmark and mark used by the nav and footer
-    navigation.tsx     Sticky nav with mobile sheet
-    landing/           One file per page section
-    commons/           Payment-method marks and fictional client logos
+    navigation.tsx     Fixed nav with mobile sheet and section anchors
+    landing/           One file per section plus block.tsx primitives
+    commons/           Legacy payment marks and client logos, no longer rendered
     ui/                shadcn/ui primitives
   lib/                 Helpers and unused dashboard hooks
-public/images/         Abstract case-study artwork
-docs/                  README screenshots
+public/images/         Enterprise case photography
+docs/                  README screenshot
 ```
 
 ## Deployment
 
-Deployed on Vercel from the `main` branch; the production domain is assigned by the project name.
-
-Live demo: <https://talos-payments.vercel.app>
+Deployed on Vercel from `main`; the production domain is assigned by the project name.
 
 ## Status and scope
 
-Verified with `npm run lint`, `npx tsc --noEmit`, `npm run build` and a visual pass at 1440 px and 390 px. Out of scope: real payment flows, analytics, forms, i18n, dark-mode polish beyond the token set, and the unused dashboard components under `src/components/ui`.
+`npm run lint`, `npx tsc --noEmit` and `npm run build` pass, with a visual pass at 1440 px and 390 px. Out of scope: real payment flows, analytics, i18n, a light/dark theme switch and the unused marks in `src/components/commons`.
 
 ## License
 
