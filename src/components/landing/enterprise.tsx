@@ -28,7 +28,7 @@ type BrandData = {
 const BRAND_DATA: BrandData[] = [
   {
     name: "Vektra",
-    image: "/images/vektra.svg",
+    image: "/images/vektra.jpg",
     metrics: [
       {
         value: "Millions",
@@ -56,7 +56,7 @@ const BRAND_DATA: BrandData[] = [
   },
   {
     name: "Northwind",
-    image: "/images/northwind.svg",
+    image: "/images/northwind.jpg",
     metrics: [
       {
         value: "5+",
@@ -84,7 +84,7 @@ const BRAND_DATA: BrandData[] = [
   },
   {
     name: "Marlin Line",
-    image: "/images/marlin-line.svg",
+    image: "/images/marlin-line.jpg",
     metrics: [
       {
         value: "130",
@@ -112,7 +112,7 @@ const BRAND_DATA: BrandData[] = [
   },
   {
     name: "Signalhub",
-    image: "/images/signalhub.svg",
+    image: "/images/signalhub.jpg",
     metrics: [
       {
         value: "+5.5%",
@@ -142,22 +142,22 @@ const BRAND_DATA: BrandData[] = [
 
 const BRAND_OVERLAYS: Record<string, { gradient: string; shadow: string; borderColor: string }> = {
   Vektra: {
-    gradient: "from-teal-900/30 via-teal-800/40 to-teal-900/60",
+    gradient: "from-teal-950/10 via-teal-900/20 to-teal-950/50",
     shadow: "rgba(14,124,107,0.35)",
     borderColor: "border-teal-700",
   },
   Northwind: {
-    gradient: "from-amber-900/30 via-amber-800/40 to-amber-900/60",
+    gradient: "from-amber-950/10 via-amber-900/20 to-amber-950/50",
     shadow: "rgba(242,184,75,0.3)",
     borderColor: "border-amber-500",
   },
   "Marlin Line": {
-    gradient: "from-teal-900/40 via-teal-800/30 to-teal-900/60",
+    gradient: "from-teal-950/10 via-teal-900/20 to-teal-950/50",
     shadow: "rgba(10,94,81,0.4)",
     borderColor: "border-teal-600",
   },
   Signalhub: {
-    gradient: "from-teal-900/30 via-slate-800/40 to-teal-900/60",
+    gradient: "from-teal-950/10 via-slate-900/20 to-teal-950/50",
     shadow: "rgba(14,124,107,0.3)",
     borderColor: "border-teal-500",
   },
