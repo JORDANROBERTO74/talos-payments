@@ -2,193 +2,96 @@
 
 import React from "react";
 import Link from "next/link";
-import { ChevronRight, Terminal, Bot, Box, Code } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { BlockHead, Shell } from "./block";
+
+const resources = [
+  ["API reference", "Every resource, parameter and error code."],
+  ["Client libraries", "Node, Python, Go, Ruby and PHP."],
+  ["Webhooks", "Signed events for every state change."],
+  ["Sandbox", "Test cards, clocks and failure modes."],
+];
 
 export function Developers() {
   return (
-    <section className="bg-[#0a1f2c] py-36 diagonal-container -mt-5 relative z-20 text-white overflow-hidden">
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0 grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-        <div>
-          <h2 className="text-[#f2b84b] font-bold text-sm uppercase tracking-wide mb-3">
-            Designed for Developers
-          </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 sm:mb-6">
-            The world&apos;s most powerful and easy-to-use APIs.
-          </h3>
-          <p className="text-base sm:text-lg text-slate-300 mb-6 sm:mb-8 leading-relaxed">
-            We agonize over the right abstractions so your teams don&apos;t need to stitch together disparate systems or spend months integrating payment functionality.
-          </p>
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex-shrink-0 w-12 h-1 bg-[#0e7c6b] rounded-full"></div>
-            <p className="text-sm font-medium text-slate-300">
-              Client libraries available in every major language
-            </p>
+    <section id="developers" className="bg-white py-20 md:py-28">
+      <Shell>
+        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <BlockHead
+              align="left"
+              overline="Developers"
+              title="One API for every money movement."
+              body="Payments, payouts, accounts and cards share the same primitives. If you can describe the flow, you can ship it."
+            />
+
+            <ul className="mt-9 grid gap-3 sm:grid-cols-2">
+              {resources.map(([title, detail]) => (
+                <li key={title}>
+                  <Link
+                    href="#"
+                    className="group flex h-full flex-col rounded-2xl border border-sand-line bg-sand p-4 transition-colors hover:border-teal/40"
+                  >
+                    <span className="flex items-center justify-between text-[13px] font-semibold text-ink">
+                      {title}
+                      <ArrowUpRight className="h-3.5 w-3.5 text-ink-mute transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </span>
+                    <span className="mt-1.5 text-[11.5px] leading-snug text-ink-soft">
+                      {detail}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center px-5 py-2.5 sm:py-2 text-sm font-bold rounded-full text-[#0a1f2c] bg-[#f2b84b] hover:bg-[#f2b84b]/90 transition-all"
-            >
-              Read the docs{" "}
-              <ChevronRight className="text-sm ml-2" />
-            </Link>
+
+          <div className="lg:col-span-7">
+            <div className="overflow-hidden rounded-[1.75rem] bg-ink shadow-lift">
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+                <div className="flex gap-4 text-[11px] font-semibold uppercase tracking-[0.14em]">
+                  <span className="text-amber">Request</span>
+                  <span className="text-white/35">Response</span>
+                </div>
+                <span className="rounded-full border border-white/15 px-2.5 py-0.5 font-mono text-[10px] text-white/45">
+                  live
+                </span>
+              </div>
+              <div className="p-6 font-mono text-[11.5px] leading-[2] text-white/65 sm:text-[12.5px]">
+                <p className="text-white/35">$ curl https://api.talos.com/v1/charges \</p>
+                <p className="pl-4">
+                  -u <span className="text-amber">sk_live_••••</span>: \
+                </p>
+                <p className="pl-4">
+                  -d amount=<span className="text-amber">1900</span> \
+                </p>
+                <p className="pl-4">
+                  -d currency=<span className="text-amber">usd</span> \
+                </p>
+                <p className="pl-4">
+                  -d source=<span className="text-amber">tok_visa</span>
+                </p>
+                <div className="my-5 h-px bg-white/10" />
+                <pre className="whitespace-pre-wrap text-white/55">
+{`{
+  "id": "ch_9f2b",
+  "amount": 1900,
+  "currency": "usd",
+  "status": "succeeded",
+  "balance_transaction": "txn_71c"
+}`}
+                </pre>
+                <p className="mt-4 text-[11px] text-teal-soft">
+                  <span aria-hidden>✓</span> 201 created in 214 ms · idempotent
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-between gap-2 border-t border-white/10 px-6 py-4 text-[11px] text-white/40">
+                <span>Node · Python · Go · Ruby · PHP</span>
+                <span className="text-amber">Docs →</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="relative bg-[#1a2542] rounded-lg shadow-2xl border border-white/10 overflow-hidden font-mono text-xs sm:text-sm leading-relaxed mt-8 lg:mt-0">
-          <div className="flex items-center px-4 py-3 bg-[#0a1f2c] border-b border-white/10">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div className="mx-auto text-xs text-slate-400 font-sans">server.js</div>
-          </div>
-          <div className="p-4 sm:p-6 overflow-x-auto text-slate-300">
-            <pre className="text-xs sm:text-sm">
-              <code>
-                <span className="token-keyword">const</span> talos ={" "}
-                <span className="token-function">require</span>(
-                <span className="token-string">&apos;talos&apos;</span>)(
-                <span className="token-string">&apos;sk_test_...&apos;</span>);
-                <br />
-                <span className="token-keyword">const</span> session ={" "}
-                <span className="token-keyword">await</span> talos.checkout.sessions.
-                <span className="token-function">create</span>(&#123;
-                <br />
-                {"  "}
-                <span className="token-string">line_items</span>: [
-                <br />
-                {"    "}&#123;
-                <br />
-                {"      "}
-                <span className="token-string">price_data</span>: &#123;
-                <br />
-                {"        "}
-                <span className="token-string">currency</span>:{" "}
-                <span className="token-string">&apos;usd&apos;</span>,
-                <br />
-                {"        "}
-                <span className="token-string">product_data</span>: &#123;
-                <br />
-                {"          "}
-                <span className="token-string">name</span>:{" "}
-                <span className="token-string">&apos;T-shirt&apos;</span>,
-                <br />
-                {"        "}&#125;,
-                <br />
-                {"        "}
-                <span className="token-string">unit_amount</span>:{" "}
-                <span className="token-operator">2000</span>,
-                <br />
-                {"      "}&#125;,
-                <br />
-                {"      "}
-                <span className="token-string">quantity</span>:{" "}
-                <span className="token-operator">1</span>,
-                <br />
-                {"    "}&#125;,
-                <br />
-                {"  "}],
-                <br />
-                {"  "}
-                <span className="token-string">mode</span>:{" "}
-                <span className="token-string">&apos;payment&apos;</span>,
-                <br />
-                {"  "}
-                <span className="token-string">success_url</span>:{" "}
-                <span className="token-string">&apos;https://example.com/success&apos;</span>,
-                <br />
-                {"  "}
-                <span className="token-string">cancel_url</span>:{" "}
-                <span className="token-string">&apos;https://example.com/cancel&apos;</span>,
-                <br />
-                &#125;);
-              </code>
-            </pre>
-          </div>
-          <div className="bg-[#0a1f2c] p-3 text-xs text-slate-400 border-t border-white/10 flex justify-between">
-            <span>Terminal</span>
-            <span className="text-green-400">● Online</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Feature cards row */}
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0 mt-16 md:mt-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Card 1: Use Talos with your stack */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0 sm:border-r sm:border-dotted lg:border-r lg:border-dotted">
-            <div className="w-12 h-12 rounded-lg bg-[#f2b84b]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Terminal className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#0e7c6b]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Use Talos with your stack</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              We offer client and server libraries in everything from React and PHP to .NET and iOS.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#f2b84b] font-semibold text-sm hover:text-[#f2b84b]/80 transition-colors">
-              See libraries <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-
-          {/* Card 2: Build AI agents */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0 sm:border-r sm:border-dotted lg:border-r lg:border-dotted">
-            <div className="w-12 h-12 rounded-lg bg-[#f2b84b]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Bot className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#0e7c6b]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Build AI agents</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              Create agents that can manage money and handle support tasks using the Talos API.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#f2b84b] font-semibold text-sm hover:text-[#f2b84b]/80 transition-colors">
-              View docs <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-
-          {/* Card 3: Explore prebuilt integrations */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0 sm:border-r sm:border-dotted lg:border-r lg:border-dotted">
-            <div className="w-12 h-12 rounded-lg bg-[#f2b84b]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Box className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#0e7c6b]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Explore prebuilt integrations</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              Connect Talos to over a hundred tools including Ardent, Relay, and Kanso.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#f2b84b] font-semibold text-sm hover:text-[#f2b84b]/80 transition-colors">
-              Browse App Marketplace <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-
-          {/* Card 4: Build on Talos Apps */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0">
-            <div className="w-12 h-12 rounded-lg bg-[#f2b84b]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Code className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#0e7c6b]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Build on Talos Apps</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              Create an app just for your team or for the millions of businesses on Talos.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#f2b84b] font-semibold text-sm hover:text-[#f2b84b]/80 transition-colors">
-              Learn about Apps <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-        </div>
-      </div>
+      </Shell>
     </section>
   );
 }

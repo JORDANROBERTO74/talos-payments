@@ -1,227 +1,110 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { BlockHead, Shell } from "./block";
+
+const businessTypes = [
+  {
+    title: "SaaS",
+    description:
+      "Quickly launch and grow recurring revenue with a unified platform for payments, subscriptions, invoicing and tax.",
+  },
+  {
+    title: "Marketplace",
+    description:
+      "Onboard service providers, manage multiparty payments and send payouts, all in one place.",
+  },
+  {
+    title: "E-commerce",
+    description:
+      "Power your online store with seamless checkout experiences, global payment methods and fraud protection.",
+  },
+  {
+    title: "Platforms",
+    description:
+      "Build marketplaces and platforms that handle complex payment flows, split payments and automated payouts.",
+  },
+  {
+    title: "Enterprise",
+    description:
+      "Enterprise-grade payment infrastructure with dedicated support, custom integrations and advanced reporting.",
+  },
+  {
+    title: "Financial services",
+    description:
+      "Embed accounts, cards and money movement into your product with programmable financial primitives.",
+  },
+];
 
 export function Security() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const trackRef = useRef<HTMLUListElement>(null);
 
-  const businessTypes = [
-    {
-      title: "AI",
-      description: "Talos supports businesses across the AI ecosystem—from usage-based billing for AI assistants like Lumen to premium subscriptions for infrastructure providers like Aster AI.",
-      link: "#",
-      logos: [
-        { name: "Aster AI", icon: null },
-        { name: "CURSOR", icon: "cube" },
-        { name: "ANTHROPIC", icon: "triangle" },
-      ],
-    },
-    {
-      title: "SaaS",
-      description: "Quickly launch and grow recurring revenue with a unified platform for payments, subscriptions, invoicing, tax, accounting, and more.",
-      link: "#",
-      logos: [
-        { name: "slack", icon: "tag" },
-        { name: "twilio", icon: "circle" },
-        { name: "Linear", icon: "dot" },
-      ],
-    },
-    {
-      title: "Marketplace",
-      description: "Get everything you need to onboard service providers, manage multiparty payments, and send payouts, all in one place.",
-      link: "#",
-      logos: [
-        { name: "BLOOMNATION", icon: null },
-        { name: "instacart", icon: "carrot" },
-        { name: "deliveroo", icon: "delivery" },
-      ],
-    },
-    {
-      title: "E-commerce",
-      description: "Power your online store with seamless checkout experiences, global payment methods, and fraud protection built for scale.",
-      link: "#",
-      logos: [
-        { name: "Bodega", icon: null },
-        { name: "WooCommerce", icon: null },
-        { name: "BigCommerce", icon: null },
-      ],
-    },
-    {
-      title: "Platforms",
-      description: "Build marketplaces and platforms that handle complex payment flows, split payments, and automated payouts to sellers.",
-      link: "#",
-      logos: [
-        { name: "Airbnb", icon: null },
-        { name: "Rideline", icon: null },
-        { name: "Lyft", icon: null },
-      ],
-    },
-    {
-      title: "Enterprise",
-      description: "Enterprise-grade payment infrastructure with dedicated support, custom integrations, and advanced reporting capabilities.",
-      link: "#",
-      logos: [
-        { name: "Microsoft", icon: null },
-        { name: "Northwind", icon: null },
-        { name: "Google", icon: null },
-      ],
-    },
-  ];
-
-  const handleScrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: -400,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleScrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 400,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Drag to scroll functionality
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-    scrollContainerRef.current.style.cursor = "grabbing";
-    scrollContainerRef.current.style.userSelect = "none";
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = "grab";
-      scrollContainerRef.current.style.userSelect = "auto";
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = "grab";
-      scrollContainerRef.current.style.userSelect = "auto";
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Touch events for mobile
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
+  const scrollBy = (direction: 1 | -1) => {
+    trackRef.current?.scrollBy({ left: direction * 360, behavior: "smooth" });
   };
 
   return (
-    <section className="bg-white py-36 diagonal-container -mt-10 relative z-25">
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        {/* Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a1f2c] mb-6">
-            Support for any business type
-          </h2>
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <p className="text-lg text-[#43514d] flex-1">
-              From global AI companies to category-defining marketplaces, successful businesses across industries grow and scale with Talos.
-            </p>
-            <div className="flex items-center gap-1 flex-shrink-0 w-full md:w-auto">
-              <Button size={"sm"} variant={"outline"} onClick={handleScrollLeft} className="flex-1 md:flex-none">
-                <ArrowLeft className="h-4 w-4" />
-              </Button>
-              <Button size={"sm"} variant={"outline"} onClick={handleScrollRight} className="flex-1 md:flex-none">
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
+    <section className="bg-sand py-20 md:py-28">
+      <Shell>
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <BlockHead
+            align="left"
+            overline="Use cases"
+            title="Support for any business type"
+            body="From global AI companies to category-defining marketplaces, successful businesses across industries grow with Talos."
+          />
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => scrollBy(-1)}
+              aria-label="Previous use cases"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand-line text-ink transition-colors hover:border-ink"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollBy(1)}
+              aria-label="Next use cases"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand-line text-ink transition-colors hover:border-ink"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
           </div>
         </div>
 
-        {/* Cards Grid - Scrollable */}
-        <div
-          ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto pb-4 cursor-grab active:cursor-grabbing [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeave}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+        <ul
+          ref={trackRef}
+          className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
         >
-          {businessTypes.map((business, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-5 sm:p-6 flex flex-col w-[280px] sm:w-[320px] flex-shrink-0"
+          {businessTypes.map((item, index) => (
+            <li
+              key={item.title}
+              className="w-[300px] shrink-0 snap-start sm:w-[340px]"
             >
-              {/* Top border accent */}
-              <div className="h-1 bg-gradient-to-r from-[#0e7c6b] to-[#f2b84b] rounded-t-lg -mx-6 -mt-6 mb-4"></div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-[#0a1f2c] mb-3">
-                {business.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[#43514d] mb-6 leading-relaxed flex-grow">
-                {business.description}
-              </p>
-
-              {/* Learn more link */}
               <Link
-                href={business.link}
-                className="text-[#0e7c6b] font-semibold text-sm hover:text-[#0a5e51] transition-colors mb-6 inline-flex items-center"
+                href="#"
+                className="group flex h-full min-h-[240px] flex-col rounded-3xl bg-white p-7 shadow-ring transition-all duration-300 hover:-translate-y-1 hover:shadow-soft"
               >
-                Learn more{" "}
-                <ChevronRight className="text-sm ml-1" />
+                <span className="font-display text-[11px] font-semibold tracking-[0.2em] text-amber-deep">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-6 text-[22px] font-semibold text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-ink-soft">
+                  {item.description}
+                </p>
+                <span className="mt-6 text-[12.5px] font-semibold text-teal">
+                  Read the playbook →
+                </span>
               </Link>
-
-              {/* Logos */}
-              <div className="flex items-center gap-6 pt-6 border-t border-slate-100">
-                {business.logos.map((logo, logoIndex) => (
-                  <div
-                    key={logoIndex}
-                    className="text-xs font-semibold text-[#43514d] opacity-60"
-                  >
-                    {logo.name}
-                  </div>
-                ))}
-              </div>
-            </div>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </Shell>
     </section>
   );
 }

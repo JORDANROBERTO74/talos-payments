@@ -1,297 +1,148 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Smartphone, CreditCard, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { Check, ArrowRight } from "lucide-react";
+import { Shell } from "./block";
+
+const proof = [
+  ["4M+", "businesses"],
+  ["135", "currencies"],
+  ["99.99%", "uptime"],
+];
 
 export function Hero() {
   return (
-    <section className="relative min-h-[800px] lg:min-h-[950px] overflow-hidden bg-white">
-      <div className="hero-bg-wrapper">
-        <div className="refined-mesh"></div>
+    <section className="relative overflow-hidden bg-ink pt-[76px] text-white">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-40 -top-24 h-[560px] w-[560px] rounded-full bg-teal/25 blur-[120px]" />
+        <div className="absolute -right-20 top-16 h-[420px] w-[420px] rounded-full bg-amber/15 blur-[120px]" />
+        <div className="absolute inset-0 arc-rings opacity-70" />
       </div>
-      <div className="relative z-10 pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-28 lg:pb-28">
-        <div className="max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0 relative">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start pt-6 sm:pt-10">
-            <div className="max-w-lg pt-6 sm:pt-12">
-              <h1 className="text-4xl sm:text-5xl lg:text-[5rem] font-black tracking-tighter text-[#3a3a3a] leading-[0.95] mb-6 sm:mb-8 hero-h1">
-                Financial infrastructure to increase your revenue
-              </h1>
-              <p className="text-lg sm:text-xl text-[#43514d] mb-8 sm:mb-10 leading-relaxed font-medium max-w-[460px]">
-                Join the millions of businesses that use Talos to accept online and in-person payments, integrate financial services, launch new custom revenue models, and build a more profitable business.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start pb-6 sm:pb-10">
-                <form className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-0" onSubmit={(e) => e.preventDefault()}>
-                  <input
-                    type="email"
-                    placeholder="Email address"
-                    className="flex-1 px-4 py-3 sm:py-2.5 text-base border border-slate-200 rounded-full sm:rounded-l-full sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent bg-white text-[#0a1f2c] placeholder-slate-400"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center px-7 py-3 sm:py-2.5 text-base font-bold rounded-full sm:rounded-l-none sm:rounded-r-full text-white bg-[#0a1f2c] hover:bg-[#0a1f2c]/90 transition-all group shadow-lg shadow-black/20"
-                  >
-                    Start now{" "}
-                    <ArrowRight className="text-sm ml-2 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-              </div>
+
+      <Shell className="relative pb-20 pt-14 md:pb-28 md:pt-20">
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-6">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[12px] font-medium text-white/70">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-amber" />
+              Payments, billing and platforms
+            </p>
+
+            <h1 className="mt-7 max-w-[14ch] text-[clamp(2.5rem,4.6vw,4.1rem)] font-semibold leading-[1] tracking-[-0.04em]">
+              Financial infrastructure to increase your revenue
+            </h1>
+
+            <p className="mt-6 max-w-[46ch] text-[16.5px] leading-relaxed text-white/65">
+              Join the millions of businesses using Talos to accept online and
+              in-person payments, embed financial services and launch new
+              revenue models from one API.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                href="#"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-amber px-6 py-3.5 text-[14.5px] font-semibold text-ink transition-colors hover:bg-white"
+              >
+                Start now
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="#"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3.5 text-[14.5px] font-semibold text-white transition-colors hover:border-white/50"
+              >
+                Contact sales
+              </Link>
             </div>
-            <div className="relative hidden lg:block h-[600px] w-full mt-[-60px]">
-              {/* Rocket Rides Dashboard Card */}
-              <div className="absolute right-0 top-10 w-[520px] bg-white rounded-2xl shadow-card z-10 overflow-hidden transform scale-90 translate-x-60">
-                {/* Top Bar with Gradient */}
-                <div className="h-12 bg-gradient-to-r from-teal-700 via-teal-500 to-amber-400 flex items-center justify-between px-4">
-                  <div className="flex items-center gap-2">
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="text-white">
-                      <path fill="#FFF" d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm3.3 6.11H4.34a.41.41 0 0 0 0 .83h8.94a2.89 2.89 0 0 1 0 5.77H7.65a.41.41 0 0 0 0 .83h5.64a3.71 3.71 0 0 0 0-7.43zm0 1.65a2.06 2.06 0 1 0 2.05 2.06c0-1.13-.92-2.06-2.06-2.06zm-2.83 3.3h-4.7a.41.41 0 0 0 0 .83h4.7a.41.41 0 0 0 0-.83zM13.3 8.6a1.24 1.24 0 1 1 0 2.47 1.24 1.24 0 0 1 0-2.47zm-3.3.8H3.41a.41.41 0 1 0 0 .83h6.6c.22 0 .4-.19.4-.42a.41.41 0 0 0-.41-.4zm.47-1.65H6.24a.41.41 0 1 0 0 .83h4.23a.41.41 0 1 0 0-.83z"></path>
-                    </svg>
-                    <span className="text-xs font-bold text-white uppercase tracking-wider">
-                      Rocket Rides
+
+            <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
+              {proof.map(([value, label]) => (
+                <div key={label}>
+                  <dt className="sr-only">{label}</dt>
+                  <dd className="font-display text-xl font-semibold text-white">
+                    {value}
+                  </dd>
+                  <dd className="text-[12px] text-white/45">{label}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="relative lg:col-span-6">
+            <div className="relative mx-auto h-[420px] w-full max-w-[520px] sm:h-[460px]">
+              <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+              <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
+
+              <div className="absolute right-0 top-2 z-10 w-[290px] rotate-[3deg] rounded-3xl bg-white p-6 text-ink shadow-lift sm:w-[310px]">
+                <div className="flex items-center justify-between">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-mute">
+                    Checkout
+                  </p>
+                  <span className="rounded-full bg-teal-soft px-2 py-0.5 text-[10px] font-semibold text-teal-deep">
+                    Live
+                  </span>
+                </div>
+                <p className="mt-5 text-[17px] font-semibold">Abstraction Magazine</p>
+                <p className="text-[12.5px] text-ink-soft">USD 19 per month</p>
+                <div className="mt-5 rounded-xl border border-sand-line bg-sand px-4 py-3">
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-ink-mute">
+                    Email
+                  </p>
+                  <p className="mt-1 text-[13px]">reader@studio.co</p>
+                </div>
+                <div className="mt-2 rounded-xl border border-sand-line bg-sand px-4 py-3">
+                  <div className="flex items-center justify-between">
+                    <p className="text-[10px] uppercase tracking-[0.14em] text-ink-mute">
+                      Card
+                    </p>
+                    <span className="flex gap-1">
+                      <span className="h-3 w-5 rounded-sm bg-ink/15" />
+                      <span className="h-3 w-5 rounded-sm bg-ink/15" />
                     </span>
-                    <svg width="10" height="4" viewBox="0 0 10 4" className="text-white">
-                      <polyline fill="none" stroke="#FFF" points="1 0 5 4 9 0"></polyline>
-                    </svg>
                   </div>
-                  <div className="bg-white/20 rounded px-2 py-1 flex items-center gap-1">
-                    <svg className="w-3 h-3" viewBox="0 0 10 10">
-                      <circle cx="4" cy="4" r="3.5" fill="none" stroke="#FFF" strokeWidth="0.5"></circle>
-                      <path fill="#FFF" d="M6.15 6.15c.2-.2.5-.2.7 0l2.12 2.12a.5.5 0 1 1-.7.7L6.15 6.85a.5.5 0 0 1 0-.7z"></path>
-                    </svg>
-                    <span className="text-xs text-white">Search</span>
-                  </div>
+                  <p className="mt-1 font-mono text-[13px] tracking-[0.12em]">
+                    4242 4242 4242 4242
+                  </p>
                 </div>
-
-                <div className="p-5 bg-white">
-                  {/* Today Section with two columns */}
-                  <div className="mb-6">
-                    <h3 className="text-sm font-bold text-[#0a1f2c] mb-4">Today</h3>
-                    <div className="grid grid-cols-2 gap-6">
-                      {/* Left Column - Net Volume */}
-                      <div>
-                        <div className="flex items-center gap-1 mb-2">
-                          <span className="text-xs font-semibold text-slate-500">Net volume</span>
-                          <svg width="7" height="4" fill="none" className="text-[#0a1f2c]">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M5.532.54a.379.379 0 0 1 .536.536L3.684 3.46a.378.378 0 0 1-.535 0L.765 1.076A.379.379 0 0 1 1.3.54l2.116 2.116L5.532.54Z" fill="#0a1f2c"></path>
-                          </svg>
-                        </div>
-                        <div className="text-2xl font-bold text-[#0a1f2c] mb-1">$3,528,198.72</div>
-                        <div className="text-xs text-slate-400 mb-4">2:00 PM</div>
-
-                        {/* Main Graph */}
-                        <div className="h-20 w-full relative mb-2">
-                          <svg className="w-full h-full" viewBox="0 0 468 70" fill="none">
-                            <path opacity=".3" d="M0 68.125h467.488v.623H0v-.623Z" fill="#C4CCD8"></path>
-                            <path d="M-1.934 68.15h78.16l19.54-8.899h78.16l19.54-21.75 19.54-4.35h19.54l19.54-4.152h21.559" stroke="#0e7c6b" strokeWidth="1.271" strokeLinejoin="round"></path>
-                          </svg>
-                        </div>
-                        <div className="flex justify-between text-xs text-slate-400">
-                          <span>12:00 AM</span>
-                          <span className="font-semibold">Now, 2:00 PM</span>
-                          <span>11:59 PM</span>
-                        </div>
-                      </div>
-
-                      {/* Right Column - USD Balance & Payouts */}
-                      <div>
-                        <div className="mb-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-1">
-                              <span className="text-xs font-semibold text-slate-500">USD Balance</span>
-                              <svg width="7" height="4" fill="none" className="text-[#0a1f2c]">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M5.532.54a.379.379 0 0 1 .536.536L3.684 3.46a.378.378 0 0 1-.535 0L.765 1.076A.379.379 0 0 1 1.3.54l2.116 2.116L5.532.54Z" fill="#0a1f2c"></path>
-                              </svg>
-                            </div>
-                            <span className="text-xs text-slate-500">View</span>
-                          </div>
-                          <div className="text-2xl font-bold text-[#0a1f2c] mb-1">$553,257.51</div>
-                          <div className="text-xs text-slate-400">Available to pay out</div>
-                        </div>
-                        <div className="border-t border-slate-100 pt-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-semibold text-slate-500">Payouts</span>
-                            <span className="text-xs text-slate-500">View</span>
-                          </div>
-                          <div className="text-2xl font-bold text-[#0a1f2c] mb-1">$102,633.07</div>
-                          <div className="text-xs text-slate-400">Expected today</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Section - Three Columns */}
-                  <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-4">
-                    {/* Net volume from sales */}
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-bold text-[#0a1f2c]">Net volume from sales</span>
-                        <span className="text-xs font-semibold text-green-600">+32.8%</span>
-                      </div>
-                      <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-xl font-bold text-[#0a1f2c]">$39,274.29</span>
-                        <span className="text-sm text-slate-400">$29,573.54</span>
-                      </div>
-                      <div className="h-16 w-full relative mb-2">
-                        <svg className="w-full h-full" viewBox="0 0 220 112" fill="none">
-                          <path opacity=".3" d="M218.625 108.961H.81v.351h217.815v-.351Z" fill="#C4CCD8"></path>
-                          <path d="m21.151 108.785 32.95-29.8 32.948-14.9 32.948 29.8 32.95-44.7h32.948l32.949-29.8" stroke="#0e7c6b" strokeWidth="1.691" strokeLinejoin="round"></path>
-                        </svg>
-                      </div>
-                      <div className="flex justify-between text-xs text-slate-400 mb-2">
-                        <span>Apr 20</span>
-                        <span>Today</span>
-                      </div>
-                      <div className="text-xs text-slate-400">Updated today 7:50 AM</div>
-                    </div>
-
-                    {/* New customers */}
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-bold text-[#0a1f2c]">New customers</span>
-                        <span className="text-xs font-semibold text-green-600">+32.1%</span>
-                      </div>
-                      <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-xl font-bold text-[#0a1f2c]">37</span>
-                        <span className="text-sm text-slate-400">28</span>
-                      </div>
-                      <div className="h-16 w-full relative mb-2">
-                        <svg className="w-full h-full" viewBox="0 0 220 112" fill="none">
-                          <path opacity=".3" d="M218.625 108.961H.81v.351h217.815v-.351Z" fill="#C4CCD8"></path>
-                          <path d="m21.15 108.785 32.95-14.8 32.949-24.9 32.948 12.8 32.95-32.7 32.948-4 32.949-25.8" stroke="#0e7c6b" strokeWidth="1.691" strokeLinejoin="round"></path>
-                        </svg>
-                      </div>
-                      <div className="flex justify-between text-xs text-slate-400 mb-2">
-                        <span>Apr 20</span>
-                        <span>Today</span>
-                      </div>
-                      <div className="text-xs text-slate-400">Updated today 7:50 AM</div>
-                    </div>
-
-                    {/* Invoices */}
-                    <div>
-                      <span className="text-sm font-bold text-[#0a1f2c]">Invoices</span>
-                      <div className="h-2 w-full bg-slate-100 rounded-full mt-3 mb-4 flex overflow-hidden">
-                        <div className="bg-teal-600" style={{ width: '54%' }}></div>
-                        <div className="bg-blue-500" style={{ width: '43%' }}></div>
-                        <div className="bg-teal-500" style={{ width: '3%' }}></div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-teal-600"></div>
-                            <span className="text-xs text-slate-500">Paid</span>
-                          </div>
-                          <span className="text-xs font-semibold text-[#0a1f2c]">$25,000.00</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                            <span className="text-xs text-slate-500">Open</span>
-                          </div>
-                          <span className="text-xs font-semibold text-[#0a1f2c]">$20,000.00</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-teal-500"></div>
-                            <span className="text-xs text-slate-500">Past due</span>
-                          </div>
-                          <span className="text-xs font-semibold text-[#0a1f2c]">$1,000.00</span>
-                        </div>
-                      </div>
-                      <div className="text-xs text-slate-400 mt-3">Updated today 7:50 AM</div>
-                    </div>
-                  </div>
-                </div>
+                <button className="mt-4 w-full rounded-full bg-ink py-3 text-[13.5px] font-semibold text-white">
+                  Pay USD 19.00
+                </button>
               </div>
 
-              {/* Subscription Card Component */}
-              <div className="absolute right-20 top-20 w-[300px] bg-white rounded-[20px] shadow-floating z-20 overflow-hidden transform transition-transform hover:-translate-y-1 duration-500">
-                <div className="p-6">
-                  <div className="flex flex-col items-center mb-5 text-center">
-                    <div className="w-14 h-14 rounded-lg bg-gray-50 shadow-md mb-3 flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-teal-600 to-amber-400 opacity-80"></div>
-                      <div className="relative z-10 bg-white p-1 rounded shadow-sm">
-                        <span className="text-[7px] font-bold">Issue 001</span>
-                      </div>
-                    </div>
-                    <h3 className="text-[#0a1f2c] font-bold text-base">Abstraction Magazine</h3>
-                    <p className="text-slate-500 text-xs">USD19 per month</p>
-                  </div>
-                  <button className="w-full bg-[#0a1f2c] text-white font-bold py-2 rounded shadow-lg hover:bg-[#1a3855] transition-colors flex items-center justify-center gap-1 mb-5">
-                    <Smartphone className="text-base" /> Pay
-                  </button>
-                  <div className="relative flex py-2 items-center mb-3">
-                    <div className="flex-grow border-t border-slate-100"></div>
-                    <span className="flex-shrink-0 mx-3 text-slate-400 text-[10px]">
-                      Or pay with card
-                    </span>
-                    <div className="flex-grow border-t border-slate-100"></div>
-                  </div>
-                  <form className="space-y-2.5">
-                    <div>
-                      <label className="block text-[10px] font-semibold text-slate-500 mb-1">
-                        Email
-                      </label>
-                      <input
-                        className="w-full border-slate-200 rounded px-2.5 py-1.5 text-xs focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white"
-                        placeholder=""
-                        type="email"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[10px] font-semibold text-slate-500 mb-1">
-                        Card information
-                      </label>
-                      <div className="border border-slate-200 rounded overflow-hidden">
-                        <div className="flex items-center px-2.5 py-1.5 border-b border-slate-200 bg-white">
-                          <input
-                            className="w-full outline-none text-xs placeholder-slate-300"
-                            placeholder="Number"
-                          />
-                          <div className="flex gap-1 opacity-50">
-                            <div className="w-5 h-3 bg-slate-200 rounded"></div>
-                            <div className="w-5 h-3 bg-slate-200 rounded"></div>
-                          </div>
-                        </div>
-                        <div className="flex bg-white">
-                          <input
-                            className="w-1/2 border-r border-slate-200 px-2.5 py-1.5 outline-none text-xs placeholder-slate-300"
-                            placeholder="MM/YY"
-                          />
-                          <div className="w-1/2 flex items-center px-2.5 py-1.5">
-                            <input
-                              className="w-full outline-none text-xs placeholder-slate-300"
-                              placeholder="CVC"
-                            />
-                            <CreditCard className="text-slate-300 text-xs" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-[10px] font-semibold text-slate-500 mb-1">
-                        Country or region
-                      </label>
-                      <div className="relative">
-                        <select className="w-full border-slate-200 rounded px-2.5 py-1.5 text-xs focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none appearance-none bg-white text-[#0a1f2c]">
-                          <option>United States</option>
-                        </select>
-                        <ChevronDown className="absolute right-2.5 top-2 pointer-events-none text-slate-400 text-xs" />
-                      </div>
-                    </div>
-                    <div>
-                      <input
-                        className="w-full border-slate-200 rounded px-2.5 py-1.5 text-xs focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white"
-                        placeholder="Postal code"
-                        type="text"
-                      />
-                    </div>
-                  </form>
+              <div className="absolute bottom-2 left-0 z-20 hidden w-[206px] -rotate-[4deg] rounded-3xl border border-white/10 bg-[#0c2735]/95 p-4 backdrop-blur-md sm:block">
+                <p className="text-[9.5px] uppercase tracking-[0.14em] text-white/50">
+                  Available to pay out
+                </p>
+                <p className="mt-1 font-display text-[19px] font-semibold text-white">
+                  $553,257.51
+                </p>
+                <svg viewBox="0 0 220 56" className="mt-4 h-14 w-full" aria-hidden>
+                  <polyline
+                    points="0,46 30,40 60,42 90,28 120,32 150,18 180,22 220,8"
+                    fill="none"
+                    stroke="#f2b84b"
+                    strokeWidth="2"
+                  />
+                </svg>
+                <p className="mt-2 text-[11px] text-white/45">
+                  Net volume today · +32.8%
+                </p>
+              </div>
+
+              <div className="absolute left-2 top-14 z-30 hidden items-center gap-2 rounded-2xl bg-white px-4 py-3 text-ink shadow-lift animate-float sm:flex">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-teal">
+                  <Check className="h-3.5 w-3.5 text-white" />
+                </span>
+                <div>
+                  <p className="text-[12px] font-semibold">Payment succeeded</p>
+                  <p className="text-[10.5px] text-ink-mute">
+                    Visa · 4242 · USD 19.00
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Shell>
     </section>
   );
 }

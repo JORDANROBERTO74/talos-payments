@@ -1,284 +1,84 @@
 "use client";
 
-import { BrandWordmark } from "@/components/brand-wordmark";
-
 import React from "react";
 import Link from "next/link";
-import { MapPin, MessageCircle, Share2, Twitter, Linkedin, Github } from "lucide-react";
+import { BrandWordmark } from "@/components/brand-wordmark";
+import { Shell } from "./block";
+
+const columns = [
+  {
+    title: "Products",
+    links: ["Payments", "Billing", "Connect", "Issuing", "Radar", "Tax"],
+  },
+  {
+    title: "Developers",
+    links: ["Documentation", "API Reference", "API Status", "API Changelog", "Build a Talos App"],
+  },
+  {
+    title: "Solutions",
+    links: ["E-commerce", "SaaS", "Marketplaces", "Platforms", "Enterprise"],
+  },
+  {
+    title: "Company",
+    links: ["Customers", "Contact Sales", "Privacy & Terms", "Careers"],
+  },
+];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-[#f4f7f5] pt-24 pb-12 border-t border-slate-200">
-      <div className="max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 mb-20">
-          <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="relative">
-                <div className="w-8 h-8 bg-gradient-to-br from-[#0e7c6b] to-[#f2b84b] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">FG</span>
-                </div>
-              </div>
-              <div className="font-bold text-xl tracking-tighter text-[#0a1f2c]">
-                <BrandWordmark className="text-[#0a1f2c]" />
-              </div>
+    <footer id="resources" className="bg-sand-deep">
+      <Shell>
+        <div className="grid gap-12 py-16 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4">
+            <div className="text-ink">
+              <BrandWordmark />
             </div>
-            <p className="text-sm text-[#43514d] mb-6 leading-relaxed">
-              Financial infrastructure for the internet. Millions of businesses of all sizes use Talos to accept payments and manage their businesses online.
+            <p className="mt-5 max-w-[34ch] text-[13px] leading-relaxed text-ink-soft">
+              Financial infrastructure for the internet. Millions of businesses
+              of all sizes use Talos to accept payments and manage their business
+              online.
             </p>
-            <div className="flex flex-col gap-3">
-              <button className="flex items-center gap-2 text-sm text-[#43514d] font-medium hover:text-[#0a1f2c] transition-colors group">
-                <MapPin className="text-base group-hover:text-[#0e7c6b] transition-colors" /> 
-                <span>United States</span>
-              </button>
-              <button className="flex items-center gap-2 text-sm text-[#43514d] font-medium hover:text-[#0a1f2c] transition-colors group">
-                <MessageCircle className="text-base group-hover:text-[#0e7c6b] transition-colors" /> 
-                <span>English (US)</span>
-              </button>
-            </div>
           </div>
-          <div className="border-l border-slate-200 pl-0 md:pl-6">
-            <h4 className="text-sm font-bold text-[#0a1f2c] mb-4">Products</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Foundry
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Billing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Invoicing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Payments
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Checkout
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Identity
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="border-l border-slate-200 pl-0 md:pl-6">
-            <h4 className="text-sm font-bold text-[#0a1f2c] mb-4">Resources</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Support
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Contact Sales
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Guides
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Privacy & Terms
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Licenses
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="border-l border-slate-200 pl-0 md:pl-6">
-            <h4 className="text-sm font-bold text-[#0a1f2c] mb-4">Developers</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  API Reference
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  API Status
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  API Changelog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Build a Talos App
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="border-l border-slate-200 pl-0 md:pl-6">
-            <h4 className="text-sm font-bold text-[#0a1f2c] mb-4">Company</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Customers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Jobs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Newsroom
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors"
-                >
-                  Partners
-                </Link>
-              </li>
-            </ul>
+
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
+            {columns.map((column) => (
+              <nav key={column.title}>
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-mute">
+                  {column.title}
+                </h2>
+                <ul className="mt-4 space-y-2.5">
+                  {column.links.map((link) => (
+                    <li key={link}>
+                      <Link
+                        href="#"
+                        className="text-[12.5px] text-ink-soft transition-colors hover:text-ink"
+                      >
+                        {link}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-slate-200">
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            <p className="text-sm text-[#43514d] font-medium">© {currentYear} Talos, Inc.</p>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-slate-300"></div>
-            <Link href="#" className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors">
-              Privacy
+
+        <div className="flex flex-col gap-3 border-t border-sand-line py-6 text-[12px] text-ink-mute sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Talos Payments, Inc.</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-1">
+            <Link href="#" className="hover:text-ink">
+              Privacy & Terms
             </Link>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-slate-300"></div>
-            <Link href="#" className="text-sm text-[#43514d] hover:text-[#0a1f2c] font-medium transition-colors">
-              Terms
+            <Link href="#" className="hover:text-ink">
+              Cookies
             </Link>
-          </div>
-          <div className="flex gap-3">
-            <Link
-              href="#"
-              aria-label="Twitter"
-              className="text-[#43514d] hover:text-[#0a1f2c] hover:bg-white transition-all p-2.5 bg-white/50 rounded-full shadow-sm hover:shadow-md"
-            >
-              <Twitter className="text-lg" />
-            </Link>
-            <Link
-              href="#"
-              aria-label="LinkedIn"
-              className="text-[#43514d] hover:text-[#0a1f2c] hover:bg-white transition-all p-2.5 bg-white/50 rounded-full shadow-sm hover:shadow-md"
-            >
-              <Linkedin className="text-lg" />
-            </Link>
-            <Link
-              href="#"
-              aria-label="GitHub"
-              className="text-[#43514d] hover:text-[#0a1f2c] hover:bg-white transition-all p-2.5 bg-white/50 rounded-full shadow-sm hover:shadow-md"
-            >
-              <Github className="text-lg" />
-            </Link>
-            <Link
-              href="#"
-              aria-label="Share"
-              className="text-[#43514d] hover:text-[#0a1f2c] hover:bg-white transition-all p-2.5 bg-white/50 rounded-full shadow-sm hover:shadow-md"
-            >
-              <Share2 className="text-lg" />
-            </Link>
+            <span className="inline-flex items-center gap-2">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-teal" />
+              All systems operational
+            </span>
           </div>
         </div>
-      </div>
+      </Shell>
     </footer>
   );
 }

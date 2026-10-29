@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,19 +53,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${sora.variable} font-sans antialiased text-[#43514d] bg-white overflow-x-hidden`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navigation />
-          {children}
-        </ThemeProvider>
+    <html
+      lang="en"
+      className={`${inter.variable} ${sora.variable} scroll-smooth`}
+    >
+      <body className="min-h-screen overflow-x-hidden bg-sand font-sans text-ink-soft antialiased">
+        <Navigation />
+        {children}
       </body>
     </html>
   );

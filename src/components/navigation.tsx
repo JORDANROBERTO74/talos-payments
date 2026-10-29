@@ -1,40 +1,17 @@
 "use client";
 
-import { BrandWordmark } from "@/components/brand-wordmark";
-
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import React, { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Sparkles, Menu, ArrowRight, ChevronRight, ChevronDown } from "lucide-react";
+import { BrandWordmark } from "@/components/brand-wordmark";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const navigationItems = [
-  {
-    name: "Products",
-    href: "#products",
-    hasDropdown: true,
-  },
-  {
-    name: "Solutions",
-    href: "#solutions",
-    hasDropdown: true,
-  },
-  {
-    name: "Developers",
-    href: "#developers",
-    hasDropdown: true,
-  },
-  {
-    name: "Resources",
-    href: "#resources",
-    hasDropdown: true,
-  },
-  {
-    name: "Pricing",
-    href: "#pricing",
-    hasDropdown: false,
-  },
+  { name: "Products", href: "#products" },
+  { name: "Solutions", href: "#solutions" },
+  { name: "Developers", href: "#developers" },
+  { name: "Resources", href: "#resources" },
+  { name: "Pricing", href: "#pricing" },
 ];
 
 export function Navigation() {
@@ -42,10 +19,9 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -53,116 +29,112 @@ export function Navigation() {
     if (href.startsWith("#")) {
       const element = document.querySelector(href);
       if (element) {
-        const headerOffset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
+          element.getBoundingClientRect().top + window.pageYOffset - 76;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       }
     }
     setMobileMenuOpen(false);
   };
 
   return (
-    <nav className="absolute w-full z-50 transition-all duration-300 pt-6">
-      <div className="max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        <div className="flex justify-between items-center h-12 gap-8">
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        isScrolled
+          ? "bg-sand/90 text-ink shadow-soft backdrop-blur-md"
+          : "bg-transparent text-white"
+      )}
+    >
+      <div className="shell flex h-[76px] items-center justify-between gap-6">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center transition-opacity hover:opacity-80"
+          aria-label="Talos home"
+        >
+          <BrandWordmark />
+        </button>
+
+        <nav className="hidden items-center gap-8 lg:flex">
+          {navigationItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleNavClick(item.href)}
+              className={cn(
+                "text-[14px] font-medium transition-colors",
+                isScrolled
+                  ? "text-ink-soft hover:text-ink"
+                  : "text-white/70 hover:text-white"
+              )}
+            >
+              {item.name}
+            </button>
+          ))}
+        </nav>
+
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href="#"
+            className={cn(
+              "rounded-full px-4 py-2 text-[14px] font-semibold transition-colors",
+              isScrolled
+                ? "text-ink-soft hover:text-ink"
+                : "text-white/70 hover:text-white"
+            )}
           >
-            <BrandWordmark className="text-white drop-shadow-sm" />
-          </button>
-
-          {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-8 md:flex">
-            {navigationItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className="group flex items-center gap-1 text-white hover:text-white/80 font-semibold transition-colors duration-200 text-base"
-              >
-                {item.name}
-                {item.hasDropdown && (
-                  <ChevronDown className="text-sm opacity-60 group-hover:opacity-100 transition-opacity" />
-                )}
-              </button>
-            ))}
-          </div>
-
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <a className="text-white font-semibold hover:text-white/80 transition-colors mr-2 text-base flex items-center" href="#">
-              Sign in <ChevronRight className="text-sm ml-1 pt-0.5" />
-            </a>
-            <a className="inline-flex items-center justify-center px-4 py-1.5 text-sm font-semibold rounded-full text-[#0a1f2c] bg-white hover:text-[#0a1f2c]/80 transition-all shadow-md hover:shadow-lg group" href="#">
-              Contact sales <ChevronRight className="text-sm ml-1 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-[#0a1f2c]" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-2 border-b pb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Sparkles className="h-6 w-6" />
-                  </div>
-                  <BrandWordmark />
-                </div>
-
-                <nav className="flex flex-col gap-2">
-                  {navigationItems.map((item) => (
-                    <button
-                      key={item.name}
-                      onClick={() => handleNavClick(item.href)}
-                      className="rounded-md px-3 py-2 text-left text-sm font-medium transition-colors text-muted-foreground hover:bg-accent hover:text-foreground"
-                    >
-                      {item.name}
-                    </button>
-                  ))}
-                </nav>
-
-                <div className="mt-4 flex flex-col gap-3 border-t pt-4">
-                  <div className="flex items-center justify-between px-3 py-2">
-                    <span className="text-sm font-medium">Theme</span>
-                    <ThemeToggle />
-                  </div>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                    className="w-full"
-                  >
-                    View Demo
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                      setMobileMenuOpen(false);
-                    }}
-                    className="w-full gap-2"
-                  >
-                    Get Started Free
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+            Sign in
+          </a>
+          <a
+            href="#"
+            className="inline-flex items-center rounded-full bg-amber px-5 py-2.5 text-[14px] font-semibold text-ink transition-colors hover:bg-white"
+          >
+            Contact sales
+          </a>
         </div>
+
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <SheetTrigger asChild className="lg:hidden">
+            <button
+              className={cn(
+                "-mr-2 inline-flex h-10 w-10 items-center justify-center",
+                isScrolled ? "text-ink" : "text-white"
+              )}
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-[320px] border-l border-sand-line bg-sand p-0 sm:w-[380px]"
+          >
+            <div className="flex h-full flex-col">
+              <div className="flex h-[76px] items-center border-b border-sand-line px-6 text-ink">
+                <BrandWordmark />
+              </div>
+              <nav className="flex flex-col px-6 py-4">
+                {navigationItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className="border-b border-sand-line py-4 text-left text-lg font-medium text-ink"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </nav>
+              <div className="mt-auto p-6">
+                <a
+                  href="#"
+                  className="inline-flex h-11 w-full items-center justify-center rounded-full bg-ink text-sm font-semibold text-white"
+                >
+                  Contact sales
+                </a>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
-    </nav>
+    </header>
   );
 }

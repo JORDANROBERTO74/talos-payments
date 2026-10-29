@@ -13,29 +13,6 @@ const config: Config = {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
         display: ["var(--font-sora)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "mesh-gradient":
-          "radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.4), transparent 25%), radial-gradient(circle at 85% 30%, rgba(14, 124, 107, 0.2), transparent 25%)",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-        xl: "0.75rem",
-        "2xl": "1rem",
-        "3xl": "1.5rem",
-      },
-      boxShadow: {
-        glass:
-          "0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3)",
-        card: "0 50px 100px -20px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3)",
-        subtle: "0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.3)",
-        floating:
-          "0 30px 60px -12px rgba(50,50,93,0.25), 0 18px 36px -18px rgba(0,0,0,0.3), 0 -12px 36px -8px rgba(0,0,0,0.025)",
-      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -48,15 +25,15 @@ const config: Config = {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#0e7c6b", // Talos primary
+          DEFAULT: "#0e7c6b",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#f2b84b", // Talos accent
+          DEFAULT: "#f2b84b",
           foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {
-          DEFAULT: "#0a1f2c", // Talos ink
+          DEFAULT: "#0a1f2c",
           foreground: "hsl(var(--accent-foreground))",
         },
         muted: {
@@ -70,8 +47,52 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        "brand-text": "#43514d",
-        "brand-ink": "#0a1f2c",
+        // Talos brand scale — warm, premium
+        ink: {
+          DEFAULT: "#0a1f2c",
+          soft: "#43514d",
+          mute: "#66736e",
+        },
+        sand: {
+          DEFAULT: "#fbf7ef",
+          deep: "#f2ebdd",
+          line: "#e5dbc9",
+        },
+        teal: {
+          DEFAULT: "#0e7c6b",
+          deep: "#0a5e51",
+          soft: "#e3f2ed",
+        },
+        amber: {
+          DEFAULT: "#f2b84b",
+          deep: "#9a6a12",
+          soft: "#fdf1d6",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        "4xl": "2rem",
+      },
+      boxShadow: {
+        soft: "0 24px 60px -32px rgba(10, 31, 44, 0.35)",
+        lift: "0 40px 90px -40px rgba(10, 31, 44, 0.45)",
+        ring: "0 0 0 1px rgba(10, 31, 44, 0.06)",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 38s linear infinite",
+        float: "float 7s ease-in-out infinite",
       },
     },
   },

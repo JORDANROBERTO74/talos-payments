@@ -2,69 +2,66 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Code, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Shell } from "./block";
 
 export function CTA() {
   return (
-    <section className="py-24 bg-white border-t border-slate-100">
-      <div className="max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0a1f2c] mb-4 sm:mb-6">Ready to get started?</h2>
-            <p className="text-[#43514d] mb-6 sm:mb-8 text-base sm:text-lg max-w-sm">
-              Explore Talos Payments, or create an account instantly and start accepting payments. You can also contact us to design a custom package for your business.
-            </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center px-5 py-2 text-sm font-bold rounded-full text-white bg-[#0e7c6b] hover:bg-[#0a1f2c] transition-colors shadow-lg shadow-teal-600/30 group"
-              >
-                Start now{" "}
-                <ArrowRight className="text-sm ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center px-5 py-2 text-sm font-bold rounded-full text-[#0e7c6b] bg-[#0e7c6b]/10 hover:bg-[#0e7c6b]/20 transition-colors"
-              >
-                Contact sales{" "}
-                <ChevronRight className="text-sm ml-1" />
-              </Link>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <div className="p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1">
-              <div className="flex items-center gap-2 text-[#0a1f2c] font-bold mb-2">
-                <Code className="text-[#0e7c6b]" />
-                <span>Always know what you pay</span>
-              </div>
-              <p className="text-sm text-[#43514d]">
-                Integrated per-transaction pricing with no hidden fees.
-              </p>
-              <Link
-                href="#"
-                className="text-[#0e7c6b] font-semibold text-sm mt-3 inline-block hover:text-[#0a1f2c]"
-              >
-                Pricing details →
-              </Link>
-            </div>
-            <div className="p-6 transition-all duration-200 hover:-translate-y-1">
-              <div className="flex items-center gap-2 text-[#0a1f2c] font-bold mb-2">
-                <BookOpen className="text-[#0e7c6b]" />
-                <span>Start your integration</span>
-              </div>
-              <p className="text-sm text-[#43514d]">
-                Get up and running with our easy-to-use developer docs.
-              </p>
-              <Link
-                href="#"
-                className="text-[#0e7c6b] font-semibold text-sm mt-3 inline-block hover:text-[#0a1f2c]"
-              >
-                API Reference →
-              </Link>
-            </div>
+    <section
+      id="pricing"
+      className="relative overflow-hidden bg-ink py-24 text-white md:py-32"
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0 arc-rings opacity-60" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-40 left-1/2 h-[420px] w-[620px] -translate-x-1/2 rounded-full bg-amber/15 blur-[130px]" />
+
+      <Shell className="relative">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber">
+            Get started
+          </p>
+          <h2 className="mt-5 font-display text-[clamp(2rem,4.2vw,3.4rem)] font-semibold leading-[1.02]">
+            Ready to get started?
+          </h2>
+          <p className="mx-auto mt-5 max-w-lg text-[15.5px] leading-relaxed text-white/60">
+            Create an account, take a test payment and move to live keys when you
+            are ready. No minimum volume, no setup fee.
+          </p>
+
+          <form
+            className="mx-auto mt-9 flex max-w-md flex-col gap-3 sm:flex-row"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <label className="sr-only" htmlFor="cta-email">
+              Work email
+            </label>
+            <input
+              id="cta-email"
+              type="email"
+              placeholder="you@company.com"
+              className="h-12 flex-1 rounded-full border border-white/15 bg-white/5 px-5 text-[14px] text-white placeholder:text-white/35 focus:border-amber focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-amber px-6 text-[14px] font-semibold text-ink transition-colors hover:bg-white"
+            >
+              Start now
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </form>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-white/50">
+            <Link href="#" className="transition-colors hover:text-white">
+              Pricing details →
+            </Link>
+            <Link href="#" className="transition-colors hover:text-white">
+              API reference →
+            </Link>
+            <Link href="#" className="transition-colors hover:text-white">
+              Contact sales →
+            </Link>
           </div>
         </div>
-      </div>
+      </Shell>
     </section>
   );
 }

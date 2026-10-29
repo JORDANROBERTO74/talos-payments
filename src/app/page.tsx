@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Hero } from "@/components/landing/hero";
 import { Companies } from "@/components/landing/companies";
