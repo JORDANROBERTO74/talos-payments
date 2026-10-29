@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -9,10 +9,43 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
-  title: "FractalGrid - Financial Infrastructure for the Internet",
+  metadataBase: new URL("https://talos-payments.vercel.app"),
+  title: {
+    default: "Talos — Financial infrastructure for the internet",
+    template: "%s | Talos",
+  },
   description:
-    "Join the millions of businesses that use Stripe to accept online and in-person payments, integrate financial services, launch new custom revenue models, and build a more profitable business.",
+    "Talos is programmable financial infrastructure: accept payments online and in person, embed financial services, and launch new revenue models from one API.",
+  applicationName: "Talos",
+  keywords: [
+    "payments",
+    "financial infrastructure",
+    "payment API",
+    "online payments",
+    "subscriptions",
+    "payouts",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "Talos",
+    title: "Talos — Financial infrastructure for the internet",
+    description:
+      "Accept payments, embed financial services and launch new revenue models from one API.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Talos — Financial infrastructure for the internet",
+    description:
+      "Accept payments, embed financial services and launch new revenue models from one API.",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased text-[#425466] bg-white overflow-x-hidden`}>
+      <body
+        className={`${inter.variable} ${sora.variable} font-sans antialiased text-[#43514d] bg-white overflow-x-hidden`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -53,6 +53,12 @@
   * {
     @apply border-border;
   }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -149,11 +155,11 @@
   height: 110%;
   background-color: #ffffff;
   background-image: 
-    radial-gradient(farthest-corner at 0% 0%, #7a7adb 0%, transparent 50%), 
-    radial-gradient(farthest-corner at 90% 80%, #90e0ff 0%, transparent 40%), 
-    radial-gradient(farthest-corner at 10% 40%, #ffcb57 0%, transparent 40%), 
-    radial-gradient(farthest-corner at 50% 30%, #ff5858 0%, transparent 50%), 
-    radial-gradient(farthest-corner at 70% 0%, #d47aff 0%, transparent 50%);
+    radial-gradient(farthest-corner at 0% 0%, #1fa093 0%, transparent 50%), 
+    radial-gradient(farthest-corner at 90% 80%, #7fd8c6 0%, transparent 40%), 
+    radial-gradient(farthest-corner at 10% 40%, #f2b84b 0%, transparent 40%), 
+    radial-gradient(farthest-corner at 50% 30%, #e2705a 0%, transparent 50%), 
+    radial-gradient(farthest-corner at 70% 0%, #0e7c6b 0%, transparent 50%);
   transform: skewY(-8deg);
   transform-origin: top left;
   filter: blur(40px) saturate(140%);
@@ -196,7 +202,7 @@
 
 /* Hero Text Styles */
 .hero-h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.95;

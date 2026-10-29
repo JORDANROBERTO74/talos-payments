@@ -1,5 +1,7 @@
 "use client";
 
+import { BrandWordmark } from "@/components/brand-wordmark";
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -73,7 +75,7 @@ export function Navigation() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <span className="font-black text-2xl tracking-tighter text-white drop-shadow-sm">stripe</span>
+            <BrandWordmark className="text-white drop-shadow-sm" />
           </button>
 
           {/* Desktop Navigation */}
@@ -97,7 +99,7 @@ export function Navigation() {
             <a className="text-white font-semibold hover:text-white/80 transition-colors mr-2 text-base flex items-center" href="#">
               Sign in <ChevronRight className="text-sm ml-1 pt-0.5" />
             </a>
-            <a className="inline-flex items-center justify-center px-4 py-1.5 text-sm font-semibold rounded-full text-[#0a2540] bg-white hover:text-[#0a2540]/80 transition-all shadow-md hover:shadow-lg group" href="#">
+            <a className="inline-flex items-center justify-center px-4 py-1.5 text-sm font-semibold rounded-full text-[#0a1f2c] bg-white hover:text-[#0a1f2c]/80 transition-all shadow-md hover:shadow-lg group" href="#">
               Contact sales <ChevronRight className="text-sm ml-1 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
@@ -106,7 +108,7 @@ export function Navigation() {
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-[#0a1f2c]" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
@@ -116,7 +118,7 @@ export function Navigation() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Sparkles className="h-6 w-6" />
                   </div>
-                  <span className="text-xl font-bold">FractalGrid</span>
+                  <BrandWordmark />
                 </div>
 
                 <nav className="flex flex-col gap-2">
