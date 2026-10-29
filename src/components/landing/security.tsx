@@ -77,7 +77,7 @@ export function Security() {
 
         <ul
           ref={trackRef}
-          className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+          className="no-scrollbar -mx-1 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-3 pt-3"
         >
           {businessTypes.map((item, index) => (
             <li
