@@ -11,39 +11,39 @@ export function LowCodeOptions() {
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         {/* Header Section */}
         <div className="mb-12 sm:mb-16">
-          <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
+          <h2 className="text-[#0e7c6b] font-bold text-sm uppercase tracking-wide mb-3">
             Built for growth
           </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-4 sm:mb-6">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#0a1f2c] mb-4 sm:mb-6">
             Take your startup further, faster
           </h3>
-          <p className="text-base sm:text-lg text-[#425466] mb-6 sm:mb-8 leading-relaxed max-w-3xl">
-            Startups build on Stripe to launch faster, adapt as they grow, and automate workflows to do more with less. Build your own API-based integration or use our low-to no-code solutions, which are simple enough for easy implementation and powerful enough to scale as fast and as far as you need.
+          <p className="text-base sm:text-lg text-[#43514d] mb-6 sm:mb-8 leading-relaxed max-w-3xl">
+            Startups build on Talos to launch faster, adapt as they grow, and automate workflows to do more with less. Build your own API-based integration or use our low-to no-code solutions, which are simple enough for easy implementation and powerful enough to scale as fast and as far as you need.
           </p>
         </div>
 
         {/* Feature Cards Grid */}
         <div className="flex flex-wrap gap-6">
-          {/* Card 1: Atlas */}
+          {/* Card 1: Foundry */}
           <div className="bg-white rounded-xl p-1 shadow-lg group flex flex-col flex-1 min-w-[320px] max-w-full md:max-w-[calc(33.333%-16px)]">
             {/* Embedded White Panel with Two Columns - Now on top */}
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative flex-shrink-0 h-[320px]">
               <div className="rounded-tl-lg w-full max-w-[420px] mx-auto">
                 <div className="grid grid-cols-2 gap-6 items-center justify-items-center">
-                  {/* Squarespace Logo - Top Left (larger, black) */}
+                  {/* Forma Logo - Top Left (larger, black) */}
                   <div className="w-28 h-28 rounded-full bg-black flex items-center justify-center shadow-lg">
                     <div className="flex flex-col items-center justify-center px-2">
-                      {/* Squarespace S icon */}
+                      {/* Forma S icon */}
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-1">
                         <path d="M12 3L4 7L12 11L20 7L12 3Z" fill="white" />
                         <path d="M4 17L12 21L20 17" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M4 12L12 16L20 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <span className="text-white text-[10px] font-bold leading-tight tracking-tight">SQUARESPACE</span>
+                      <span className="text-white text-[10px] font-bold leading-tight tracking-tight">FORMA</span>
                     </div>
                   </div>
 
-                  {/* HubSpot-like Logo - Top Right (coral/orange) */}
+                  {/* Relay-like mark - top right */}
                   <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center shadow-lg">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="16" cy="16" r="5" fill="white" />
@@ -58,12 +58,12 @@ export function LowCodeOptions() {
                     </svg>
                   </div>
 
-                  {/* Intuit Logo - Bottom Left (blue) */}
+                  {/* Ledgerly Logo - Bottom Left (blue) */}
                   <div className="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
-                    <span className="text-white text-sm font-bold tracking-wide">intuit</span>
+                    <span className="text-white text-sm font-bold tracking-wide">ledgerly</span>
                   </div>
 
-                  {/* Segment-like Logo - Bottom Right (white with red flame icon) */}
+                  {/* Quill-like mark - bottom right */}
                   <div className="w-24 h-24 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shadow-md">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       {/* Flame/droplet shape */}
@@ -82,14 +82,14 @@ export function LowCodeOptions() {
 
 
               {/* Title and Description */}
-              <h4 className="text-xl font-bold text-[#0a2540] mb-2">Use a pre-integrated platform</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
-                Explore our directory to find out-of-the-box solutions that connect with Stripe, such as Squarespace and Lightspeed.              </p>
+              <h4 className="text-xl font-bold text-[#0a1f2c] mb-2">Use a pre-integrated platform</h4>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
+                Explore our directory to find out-of-the-box solutions that connect with Talos, such as Forma and Lightwell.              </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 See directory{" "}
                 <ChevronRight className="text-sm ml-1" />
@@ -112,9 +112,9 @@ export function LowCodeOptions() {
                       <div className="absolute inset-0 bg-gradient-to-br from-cyan-300 to-teal-400 opacity-20 rounded-full"></div>
                     </div>
                     {/* Shield badge with checkmark */}
-                    <div className="absolute -top-1 -right-1 w-8 h-8 bg-purple-700 rounded-full flex items-center justify-center shadow-md border-2 border-white relative">
+                    <div className="absolute -top-1 -right-1 w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center shadow-md border-2 border-white relative">
                       <Shield className="w-4 h-4 text-white" fill="currentColor" />
-                      <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-purple-700 rounded-full border-2 border-white flex items-center justify-center">
+                      <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-teal-700 rounded-full border-2 border-white flex items-center justify-center">
                         <CheckCircle2 className="w-2.5 h-2.5 text-white" fill="currentColor" />
                       </div>
                     </div>
@@ -131,7 +131,7 @@ export function LowCodeOptions() {
                   ))}
                 </div>
 
-                {/* Right Circle - Stripe App Windows */}
+                {/* Right Circle - Talos App Windows */}
                 <div className="relative">
                   <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg relative">
                     {/* Background window (blue) - rotated */}
@@ -140,9 +140,9 @@ export function LowCodeOptions() {
                     <div className="relative w-14 h-14 bg-white rounded-md border border-slate-200 shadow-md transform rotate-[2deg]">
                       {/* Window header bar */}
                       <div className="absolute top-0 left-0 right-0 h-2 bg-slate-50 border-b border-slate-200 rounded-t-md"></div>
-                      {/* Stripe S logo in bottom-left */}
-                      <div className="absolute bottom-1.5 left-1.5 w-5 h-5 bg-purple-700 rounded flex items-center justify-center shadow-sm">
-                        <span className="text-white text-[9px] font-bold leading-none">S</span>
+                      {/* Talos mark in bottom-left */}
+                      <div className="absolute bottom-1.5 left-1.5 w-5 h-5 bg-teal-700 rounded flex items-center justify-center shadow-sm">
+                        <span className="text-white text-[9px] font-bold leading-none">T</span>
                       </div>
                     </div>
                   </div>
@@ -158,15 +158,15 @@ export function LowCodeOptions() {
 
 
               {/* Title and Description */}
-              <h4 className="text-xl font-bold text-[#0a2540] mb-2">Build with Stripe-certified experts</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
-                Work with a Stripe consulting partner that can integrate and deploy Stripe solutions for you.
+              <h4 className="text-xl font-bold text-[#0a1f2c] mb-2">Build with Talos-certified experts</h4>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
+                Work with a Talos consulting partner that can integrate and deploy Talos solutions for you.
               </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 View partners{" "}
                 <ChevronRight className="text-sm ml-1" />
@@ -181,29 +181,29 @@ export function LowCodeOptions() {
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative flex-shrink-0 h-[320px]">
               <div className="bg-white rounded-tl-lg p-4 w-full max-w-[320px] mx-auto">
                 {/* Brand Elements Form */}
-                <div className="text-xs font-semibold text-[#0a2540] mb-1">Brand elements</div>
-                <div className="text-[10px] text-[#425466] mb-4 leading-relaxed">
-                  Customize how your brand appears globally across the Stripe products your customers use.
+                <div className="text-xs font-semibold text-[#0a1f2c] mb-1">Brand elements</div>
+                <div className="text-[10px] text-[#43514d] mb-4 leading-relaxed">
+                  Customize how your brand appears globally across the Talos products your customers use.
                 </div>
 
                 {/* Icon field */}
                 <div className="flex gap-2 items-center justify-between mb-3">
-                  <label className="text-xs text-[#425466] mb-1 block">Icon</label>
+                  <label className="text-xs text-[#43514d] mb-1 block">Icon</label>
                   <div className="flex items-center gap-2">
                     <button className="w-10 h-10 border border-slate-300 rounded-full flex items-center justify-center bg-white hover:bg-slate-50 transition-colors">
-                      <span className="text-sm font-semibold text-[#0a2540]">T</span>
+                      <span className="text-sm font-semibold text-[#0a1f2c]">T</span>
                     </button>
                   </div>
                 </div>
 
                 {/* Logo field */}
                 <div className="flex gap-2 items-center justify-between mb-3">
-                  <label className="text-xs text-[#425466] mb-1 block">Logo</label>
+                  <label className="text-xs text-[#43514d] mb-1 block">Logo</label>
                   <input
                     type="text"
-                    value="Typeform"
+                    value="Quill"
                     readOnly
-                    className="w-full border border-slate-300 rounded px-3 py-2 text-sm bg-white text-[#0a2540]"
+                    className="w-full border border-slate-300 rounded px-3 py-2 text-sm bg-white text-[#0a1f2c]"
                   />
                 </div>
 
@@ -211,14 +211,14 @@ export function LowCodeOptions() {
 
                 {/* Brand color field */}
                 <div className="flex gap-2 items-center justify-between">
-                  <label className="text-xs text-[#425466] mb-1 block">Brand color</label>
+                  <label className="text-xs text-[#43514d] mb-1 block">Brand color</label>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded border border-slate-300 bg-[#F5F0EA]" />
                     <input
                       type="text"
                       value="#F5F0EA"
                       readOnly
-                      className="flex-1 border border-slate-300 rounded px-3 py-2 text-xs bg-white text-[#425466] font-mono"
+                      className="flex-1 border border-slate-300 rounded px-3 py-2 text-xs bg-white text-[#43514d] font-mono"
                     />
                   </div>
                 </div>
@@ -233,14 +233,14 @@ export function LowCodeOptions() {
 
 
               {/* Title and Description */}
-              <h4 className="text-xl font-bold text-[#0a2540] mb-2">Try our no-code products</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h4 className="text-xl font-bold text-[#0a1f2c] mb-2">Try our no-code products</h4>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
                 Set up usage-based billing, accept an in-person payment with your phone, or share a payment link directly from your Dashboard to start generating revenue in minutes—no code required.                </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 Explore no-code{" "}
                 <ChevronRight className="text-sm ml-1" />

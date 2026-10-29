@@ -1,48 +1,73 @@
-# Next.js Template
+# Talos
 
-This is a [Next.js](https://nextjs.org) project template bootstrapped with the App Router.
+A payments-infrastructure marketing site: one-page product story for a fictional financial platform, built with Next.js 14, TypeScript, Tailwind CSS and shadcn/ui primitives.
 
-## Getting Started
+![Talos landing page hero: dark ink headline over a teal and amber mesh, with a checkout card, dashboard mock and customer logo row](docs/screenshot.webp)
 
-First, install the dependencies:
+## What it is
+
+A single marketing route (`/`) with eleven sections: hero, customer logos, product features, global scale, security, enterprise case studies, startup program, developer platform, no-code options, closing call to action and footer. It is a front-end demo: there is no backend, no real payments, no authentication and no CMS. Every form and link is a placeholder.
+
+## Why this over a landing template
+
+- **Own visual system.** Teal primary (`#0e7c6b`), amber accent (`#f2b84b`) and a deep ink (`#0a1f2c`), driven by theme tokens and the Tailwind scale rather than per-component palettes.
+- **Two typefaces with one job each.** Sora for headings, Inter for body copy, both self-hosted at build time through `next/font`.
+- **Fictional case studies only.** The four enterprise stories, their logos and the client logo row are invented brands, so no third-party trademark ships with the page.
+- **Section-level components.** Each band of the page is an isolated component with its own copy, which makes swapping a section a one-file change.
+
+## Quick start
+
+Requirements: Node.js 18.17 or newer and npm.
 
 ```bash
+git clone https://github.com/JORDANROBERTO74/talos-payments.git
+cd talos-payments
 npm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create an optimized production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
+| `npx tsc --noEmit` | Type check without emitting |
 
-## Project Structure
+## Theming
 
-```
+`src/app/globals.css` holds the shadcn/ui CSS variables, the hero mesh gradient (`.refined-mesh`) and the heading font rule. `tailwind.config.ts` maps the brand colours (`primary`, `secondary`, `accent`, `brand-ink`, `brand-text`), radii and shadows.
+
+To rebrand: change the hex values in `tailwind.config.ts`, the mesh stops in `globals.css`, the font pair in `src/app/layout.tsx`, then the wordmark in `src/components/brand-wordmark.tsx` and the icon in `src/app/icon.svg`. Hardcoded brand hexes still exist inside the section components, so a full palette swap is a find-and-replace across `src/components/landing`.
+
+## Project structure
+
+```text
 src/
-├── app/              # Next.js App Router
-│   ├── layout.tsx    # Root layout
-│   ├── page.tsx      # Home page
-│   └── globals.css   # Global styles
-├── components/       # React components
-│   └── ui/          # UI components (shadcn/ui)
-├── hooks/           # Custom React hooks
-└── lib/             # Utility functions
+  app/                 App Router entry, metadata, global styles, icon
+  components/
+    brand-wordmark.tsx Wordmark and mark used by the nav and footer
+    navigation.tsx     Sticky nav with mobile sheet
+    landing/           One file per page section
+    commons/           Payment-method marks and fictional client logos
+    ui/                shadcn/ui primitives
+  lib/                 Helpers and unused dashboard hooks
+public/images/         Abstract case-study artwork
+docs/                  README screenshots
 ```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deployed on Vercel from the `main` branch; the production domain is assigned by the project name.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Live demo: <https://talos-payments.vercel.app>
 
-## Deploy on Vercel
+## Status and scope
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Verified with `npm run lint`, `npx tsc --noEmit`, `npm run build` and a visual pass at 1440 px and 390 px. Out of scope: real payment flows, analytics, forms, i18n, dark-mode polish beyond the token set, and the unused dashboard components under `src/components/ui`.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT. See [LICENSE](LICENSE).

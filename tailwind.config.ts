@@ -9,12 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-sora)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "mesh-gradient":
-          "radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.4), transparent 25%), radial-gradient(circle at 85% 30%, rgba(99, 91, 255, 0.2), transparent 25%)",
+          "radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.4), transparent 25%), radial-gradient(circle at 85% 30%, rgba(14, 124, 107, 0.2), transparent 25%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -44,15 +48,15 @@ const config: Config = {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#635bff", // Stripe Blurple
+          DEFAULT: "#0e7c6b", // Talos primary
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#00d4ff", // Cyan
+          DEFAULT: "#f2b84b", // Talos accent
           foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {
-          DEFAULT: "#0a2540", // Dark slate/navy
+          DEFAULT: "#0a1f2c", // Talos ink
           foreground: "hsl(var(--accent-foreground))",
         },
         muted: {
@@ -66,8 +70,8 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        "slate-text": "#425466",
-        "slate-dark": "#0a2540",
+        "brand-text": "#43514d",
+        "brand-ink": "#0a1f2c",
       },
     },
   },

@@ -14,10 +14,10 @@ export function Security() {
   const businessTypes = [
     {
       title: "AI",
-      description: "FractalGrid supports businesses across the AI ecosystem—from usage-based billing for AI assistants like Perplexity to premium subscriptions for infrastructure providers like OpenAI.",
+      description: "Talos supports businesses across the AI ecosystem—from usage-based billing for AI assistants like Lumen to premium subscriptions for infrastructure providers like Aster AI.",
       link: "#",
       logos: [
-        { name: "OpenAI", icon: null },
+        { name: "Aster AI", icon: null },
         { name: "CURSOR", icon: "cube" },
         { name: "ANTHROPIC", icon: "triangle" },
       ],
@@ -47,7 +47,7 @@ export function Security() {
       description: "Power your online store with seamless checkout experiences, global payment methods, and fraud protection built for scale.",
       link: "#",
       logos: [
-        { name: "Shopify", icon: null },
+        { name: "Bodega", icon: null },
         { name: "WooCommerce", icon: null },
         { name: "BigCommerce", icon: null },
       ],
@@ -58,7 +58,7 @@ export function Security() {
       link: "#",
       logos: [
         { name: "Airbnb", icon: null },
-        { name: "Uber", icon: null },
+        { name: "Rideline", icon: null },
         { name: "Lyft", icon: null },
       ],
     },
@@ -68,7 +68,7 @@ export function Security() {
       link: "#",
       logos: [
         { name: "Microsoft", icon: null },
-        { name: "Amazon", icon: null },
+        { name: "Northwind", icon: null },
         { name: "Google", icon: null },
       ],
     },
@@ -150,12 +150,12 @@ export function Security() {
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a1f2c] mb-6">
             Support for any business type
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <p className="text-lg text-[#425466] flex-1">
-              From global AI companies to category-defining marketplaces, successful businesses across industries grow and scale with FractalGrid.
+            <p className="text-lg text-[#43514d] flex-1">
+              From global AI companies to category-defining marketplaces, successful businesses across industries grow and scale with Talos.
             </p>
             <div className="flex items-center gap-1 flex-shrink-0 w-full md:w-auto">
               <Button size={"sm"} variant={"outline"} onClick={handleScrollLeft} className="flex-1 md:flex-none">
@@ -186,22 +186,22 @@ export function Security() {
               className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-5 sm:p-6 flex flex-col w-[280px] sm:w-[320px] flex-shrink-0"
             >
               {/* Top border accent */}
-              <div className="h-1 bg-gradient-to-r from-[#635bff] to-[#00d4ff] rounded-t-lg -mx-6 -mt-6 mb-4"></div>
+              <div className="h-1 bg-gradient-to-r from-[#0e7c6b] to-[#f2b84b] rounded-t-lg -mx-6 -mt-6 mb-4"></div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-[#0a2540] mb-3">
+              <h3 className="text-xl font-bold text-[#0a1f2c] mb-3">
                 {business.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#425466] mb-6 leading-relaxed flex-grow">
+              <p className="text-[#43514d] mb-6 leading-relaxed flex-grow">
                 {business.description}
               </p>
 
               {/* Learn more link */}
               <Link
                 href={business.link}
-                className="text-[#635bff] font-semibold text-sm hover:text-[#5851ea] transition-colors mb-6 inline-flex items-center"
+                className="text-[#0e7c6b] font-semibold text-sm hover:text-[#0a5e51] transition-colors mb-6 inline-flex items-center"
               >
                 Learn more{" "}
                 <ChevronRight className="text-sm ml-1" />
@@ -212,7 +212,7 @@ export function Security() {
                 {business.logos.map((logo, logoIndex) => (
                   <div
                     key={logoIndex}
-                    className="text-xs font-semibold text-[#425466] opacity-60"
+                    className="text-xs font-semibold text-[#43514d] opacity-60"
                   >
                     {logo.name}
                   </div>

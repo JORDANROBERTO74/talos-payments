@@ -40,13 +40,13 @@ export const OverallCompanySummary = ({
         title: 'Percentage Automated',
         value: `${data.automated_percentage.toFixed(1)}%`,
         icon: Percent,
-        color: 'text-indigo-500'
+        color: 'text-teal-600'
       },
       {
         title: 'Total Automations',
         value: data.automation_runs.toLocaleString(),
         icon: Activity,
-        color: 'text-purple-500'
+        color: 'text-teal-600'
       },
       {
         title: 'Success Rate',

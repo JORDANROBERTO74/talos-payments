@@ -218,7 +218,7 @@ function ModularDiagram() {
                       {rowIndex === 1 && colIndex === 2 ? (
                         <div
                           key={`line-vertical-${rowIndex}-${colIndex}`}
-                          className="absolute w-0.5 bg-[#635bff]"
+                          className="absolute w-0.5 bg-[#0e7c6b]"
                           style={{ 
                             top: `${((startY + rowIndex * (moduleSize + gapPx)) / containerHeight) * 100}%`,
                             left: `${((startX + colIndex * (moduleSize + gapPx) + moduleSize / 2) / containerWidth) * 100}%`,
@@ -232,7 +232,7 @@ function ModularDiagram() {
                         <>
                           <div
                             key={`line-vertical-${rowIndex}-${colIndex}`}
-                            className="absolute w-0.5 bg-[#635bff]"
+                            className="absolute w-0.5 bg-[#0e7c6b]"
                             style={{ 
                               top: `${((startY + rowIndex * (moduleSize + gapPx)) / containerHeight) * 100}%`,
                               left: `${((startX + colIndex * (moduleSize + gapPx) + moduleSize / 2) / containerWidth) * 100}%`,
@@ -243,7 +243,7 @@ function ModularDiagram() {
                           {/* Horizontal line in the center of vertical line */}
                           <div
                             key={`line-horizontal-${rowIndex}-${colIndex}`}
-                            className="absolute h-0.5 bg-[#635bff]"
+                            className="absolute h-0.5 bg-[#0e7c6b]"
                             style={{ 
                               top: `${((startY + rowIndex * (moduleSize + gapPx) + moduleSize / 2) / containerHeight) * 100}%`,
                               left: `calc(${((startX + colIndex * (moduleSize + gapPx) + moduleSize / 1.35) / containerWidth) * 100}%)`,
@@ -263,16 +263,16 @@ function ModularDiagram() {
                     >
                       {moduleName ? (
                         <div className="flex flex-col items-center justify-center w-full h-full">
-                          <div className={`${isAlwaysHover ? 'text-[#635bff]' : 'text-slate-600'} group-hover:text-[#635bff] transition-colors duration-300 ease-out flex items-center justify-center`}>
+                          <div className={`${isAlwaysHover ? 'text-[#0e7c6b]' : 'text-slate-600'} group-hover:text-[#0e7c6b] transition-colors duration-300 ease-out flex items-center justify-center`}>
                             {getIcon(moduleName)}
                           </div>
-                          <span className={`text-[10px] font-semibold text-[#0a2540] mt-1.5 capitalize whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out h-0 group-hover:h-[14px] overflow-hidden ${isAlwaysHover ? 'opacity-100 h-[14px]' : ''}`}>
+                          <span className={`text-[10px] font-semibold text-[#0a1f2c] mt-1.5 capitalize whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out h-0 group-hover:h-[14px] overflow-hidden ${isAlwaysHover ? 'opacity-100 h-[14px]' : ''}`}>
                             {moduleName}
                           </span>
                         </div>
                       ) : (
                         // Default icon for modules without names
-                        <div className={`w-3 h-3 bg-slate-400 rounded-full group-hover:bg-[#635bff] transition-colors duration-150 ${isAlwaysHover ? 'bg-[#635bff]' : ''}`}></div>
+                        <div className={`w-3 h-3 bg-slate-400 rounded-full group-hover:bg-[#0e7c6b] transition-colors duration-150 ${isAlwaysHover ? 'bg-[#0e7c6b]' : ''}`}></div>
                       )}
                     </div>
                   ) : null}
@@ -292,45 +292,45 @@ export function Features() {
       icon: CreditCard,
       title: "Payments",
       description: "Online payments aimed at growth.",
-      color: "#635bff",
+      color: "#0e7c6b",
       link: "#",
     },
     {
       icon: Receipt,
       title: "Billing",
       description: "Subscription management and recurring billing.",
-      color: "#00d4ff",
+      color: "#f2b84b",
       link: "#",
     },
     {
       icon: Building2,
       title: "Connect",
       description: "Payments for platforms and marketplaces.",
-      color: "#0a2540",
+      color: "#0a1f2c",
       link: "#",
     },
   ];
 
   return (
-    <section className="bg-[#f6f9fc] py-24 diagonal-container -mt-10 relative z-10">
+    <section className="bg-[#f4f7f5] py-24 diagonal-container -mt-10 relative z-10">
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         <div className="mb-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           <div className="flex-1">
-            <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
+            <h2 className="text-[#0e7c6b] font-bold text-sm uppercase tracking-wide mb-3">
               Modular solutions
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a1f2c] mb-6">
               A fully integrated suite of financial products.
             </h3>
-            <p className="text-lg text-[#425466] max-w-2xl leading-relaxed">
-              We bring together everything that&apos;s required to build websites and apps that accept payments and send payouts globally. FractalGrid&apos;s products power payments for online and in-person retailers, subscriptions businesses, software platforms and marketplaces, and everything in between.
+            <p className="text-lg text-[#43514d] max-w-2xl leading-relaxed">
+              We bring together everything that&apos;s required to build websites and apps that accept payments and send payouts globally. Talos&apos;s products power payments for online and in-person retailers, subscriptions businesses, software platforms and marketplaces, and everything in between.
             </p>
           </div>
           <div className="hidden lg:block flex-1 w-full lg:w-auto lg:min-w-[400px]">
             <ModularDiagram />
           </div>
         </div>
-        {/* Payments Feature - Stripe-style hero layout */}
+        {/* Payments Feature - Talos-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
@@ -338,31 +338,31 @@ export function Features() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center">
                 <CreditCard className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Payments</span>
+              <span className="font-bold text-[#0a1f2c]">Payments</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a1f2c] mb-6">
               Accept and optimize payments, globally
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#43514d] mb-8 leading-relaxed">
               Increase authorization rates, offer local payment methods to boost conversion, and reduce fraud using AI.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#0e7c6b] text-white font-semibold rounded-lg hover:bg-[#0a5e51] transition-colors mb-8"
             >
               Start with Payments{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#0a1f2c] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Tax for automating tax registration, collection, and filing
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Radar for AI-powered fraud protection
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Issuing for creating card issuing programs
                 </Link>
               </div>
@@ -378,8 +378,8 @@ export function Features() {
                   <Sofa className="text-amber-600 text-2xl" />
                 </div>
                 <div className="flex-1">
-                  <p className="font-semibold text-sm text-[#0a2540]">Wood Chair 001</p>
-                  <p className="text-xl font-bold text-[#0a2540]">$149</p>
+                  <p className="font-semibold text-sm text-[#0a1f2c]">Wood Chair 001</p>
+                  <p className="text-xl font-bold text-[#0a1f2c]">$149</p>
                 </div>
               </div>
               
@@ -413,24 +413,24 @@ export function Features() {
               {/* Form fields */}
               <div className="space-y-3">
                 <div>
-                  <label className="block text-xs font-medium text-[#0a2540] mb-1.5">Email</label>
+                  <label className="block text-xs font-medium text-[#0a1f2c] mb-1.5">Email</label>
                   <input
                     type="email"
                     value="jane.diaz@example.com"
                     readOnly
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a2540]"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a1f2c]"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-xs font-medium text-[#0a2540] mb-1.5">Card information</label>
+                  <label className="block text-xs font-medium text-[#0a1f2c] mb-1.5">Card information</label>
                   <div className="space-y-2">
                     <div className="relative">
                       <input
                         type="text"
                         value="4242 4242 4242 4242"
                         readOnly
-                        className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a2540] pr-10"
+                        className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a1f2c] pr-10"
                       />
                       <div className="absolute right-2 top-1/2 -translate-y-1/2">
                         <span className="text-[10px] font-semibold text-blue-600">VISA</span>
@@ -441,14 +441,14 @@ export function Features() {
                         type="text"
                         value="05/26"
                         readOnly
-                        className="px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a2540]"
+                        className="px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a1f2c]"
                       />
                       <div className="relative">
                         <input
                           type="text"
                           value="123"
                           readOnly
-                          className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a2540] pr-8"
+                          className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a1f2c] pr-8"
                         />
                         <CreditCard className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs" />
                       </div>
@@ -457,23 +457,23 @@ export function Features() {
                 </div>
                 
                 <div>
-                  <label className="block text-xs font-medium text-[#0a2540] mb-1.5">Country or region</label>
-                  <select className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white text-[#0a2540]">
+                  <label className="block text-xs font-medium text-[#0a1f2c] mb-1.5">Country or region</label>
+                  <select className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white text-[#0a1f2c]">
                     <option>United States</option>
                   </select>
                 </div>
                 
                 <div>
-                  <label className="block text-xs font-medium text-[#0a2540] mb-1.5">ZIP/Postal code</label>
+                  <label className="block text-xs font-medium text-[#0a1f2c] mb-1.5">ZIP/Postal code</label>
                   <input
                     type="text"
                     value="97712"
                     readOnly
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a2540]"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-slate-50 text-[#0a1f2c]"
                   />
                 </div>
                 
-                <button className="w-full bg-[#635bff] text-white py-3 px-4 rounded-lg font-semibold text-base hover:bg-[#5851ea] transition-colors mt-2">
+                <button className="w-full bg-[#0e7c6b] text-white py-3 px-4 rounded-lg font-semibold text-base hover:bg-[#0a5e51] transition-colors mt-2">
                   Pay $149
                 </button>
               </div>
@@ -481,7 +481,7 @@ export function Features() {
           </div>
         </div>
         
-        {/* Billing Feature - Stripe-style hero layout */}
+        {/* Billing Feature - Talos-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
@@ -489,32 +489,32 @@ export function Features() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
                 <Receipt className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Billing</span>
+              <span className="font-bold text-[#0a1f2c]">Billing</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a1f2c] mb-6">
               Capture recurring revenue
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#43514d] mb-8 leading-relaxed">
               Manage flat rate, usage-based, and hybrid pricing models, minimize churn, and automate finance operations.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#0e7c6b] text-white font-semibold rounded-lg hover:bg-[#0a5e51] transition-colors mb-8"
             >
               Start with Billing{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#0a1f2c] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Invoicing for invoice creation, collection, and tracking
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Usage-based billing for metering, billing, and consumption insights
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
-                  Stripe Sigma for custom revenue reports—no SQL required
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
+                  Talos Lens for custom revenue reports—no SQL required
                 </Link>
               </div>
             </div>
@@ -526,15 +526,15 @@ export function Features() {
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-[#635bff] rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 bg-[#0e7c6b] rounded-full flex items-center justify-center">
                     <span className="text-white text-xs font-bold">Q</span>
                   </div>
-                  <span className="font-semibold text-[#0a2540]">Quantum</span>
+                  <span className="font-semibold text-[#0a1f2c]">Quantum</span>
                 </div>
-                <div className="flex gap-4 text-sm text-[#425466]">
-                  <button className="hover:text-[#635bff] transition-colors">Products</button>
-                  <button className="hover:text-[#635bff] transition-colors font-semibold text-[#635bff]">Pricing</button>
-                  <button className="hover:text-[#635bff] transition-colors">Contact</button>
+                <div className="flex gap-4 text-sm text-[#43514d]">
+                  <button className="hover:text-[#0e7c6b] transition-colors">Products</button>
+                  <button className="hover:text-[#0e7c6b] transition-colors font-semibold text-[#0e7c6b]">Pricing</button>
+                  <button className="hover:text-[#0e7c6b] transition-colors">Contact</button>
                 </div>
               </div>
               
@@ -542,60 +542,60 @@ export function Features() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Standard */}
                 <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <h3 className="font-semibold text-[#0a2540] mb-2">Standard</h3>
-                  <p className="text-xs text-[#425466] mb-3">Up to 5 users</p>
+                  <h3 className="font-semibold text-[#0a1f2c] mb-2">Standard</h3>
+                  <p className="text-xs text-[#43514d] mb-3">Up to 5 users</p>
                   <div className="mb-4">
-                    <span className="text-3xl font-bold text-[#0a2540]">$49</span>
-                    <span className="text-sm text-[#425466]"> /month</span>
+                    <span className="text-3xl font-bold text-[#0a1f2c]">$49</span>
+                    <span className="text-sm text-[#43514d]"> /month</span>
                   </div>
-                  <button className="w-full bg-[#635bff] text-white py-2 px-4 rounded-lg font-semibold text-sm hover:bg-[#5851ea] transition-colors mb-4">
+                  <button className="w-full bg-[#0e7c6b] text-white py-2 px-4 rounded-lg font-semibold text-sm hover:bg-[#0a5e51] transition-colors mb-4">
                     Subscribe
                   </button>
-                  <div className="space-y-2 text-xs text-[#425466]">
+                  <div className="space-y-2 text-xs text-[#43514d]">
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>12 months historical data</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>4 hr data refresh</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>500+ third party integrations</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Professional */}
-                <div className="bg-white rounded-lg p-4 border-2 border-[#635bff] relative">
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-pink-500 text-white text-xs px-2 py-0.5 rounded-full">
+                <div className="bg-white rounded-lg p-4 border-2 border-[#0e7c6b] relative">
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-xs px-2 py-0.5 rounded-full">
                     Popular!
                   </div>
-                  <h3 className="font-semibold text-[#0a2540] mb-2">Professional</h3>
-                  <p className="text-xs text-[#425466] mb-3">Up to 25 users</p>
+                  <h3 className="font-semibold text-[#0a1f2c] mb-2">Professional</h3>
+                  <p className="text-xs text-[#43514d] mb-3">Up to 25 users</p>
                   <div className="mb-4">
-                    <span className="text-3xl font-bold text-[#0a2540]">$149</span>
-                    <span className="text-sm text-[#425466]"> /month</span>
+                    <span className="text-3xl font-bold text-[#0a1f2c]">$149</span>
+                    <span className="text-sm text-[#43514d]"> /month</span>
                   </div>
-                  <button className="w-full bg-[#635bff] text-white py-2 px-4 rounded-lg font-semibold text-sm hover:bg-[#5851ea] transition-colors mb-4">
+                  <button className="w-full bg-[#0e7c6b] text-white py-2 px-4 rounded-lg font-semibold text-sm hover:bg-[#0a5e51] transition-colors mb-4">
                     Subscribe
                   </button>
-                  <div className="space-y-2 text-xs text-[#425466]">
+                  <div className="space-y-2 text-xs text-[#43514d]">
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>24 months historical data</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>1 hr data refresh</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>1,000+ third party integrations</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>Simple reporting</span>
                     </div>
                   </div>
@@ -603,34 +603,34 @@ export function Features() {
                 
                 {/* Enterprise */}
                 <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <h3 className="font-semibold text-[#0a2540] mb-2">Enterprise</h3>
-                  <p className="text-xs text-[#425466] mb-3">Unlimited users</p>
+                  <h3 className="font-semibold text-[#0a1f2c] mb-2">Enterprise</h3>
+                  <p className="text-xs text-[#43514d] mb-3">Unlimited users</p>
                   <div className="mb-4">
-                    <span className="text-3xl font-bold text-[#0a2540]">$299</span>
-                    <span className="text-sm text-[#425466]"> /month</span>
+                    <span className="text-3xl font-bold text-[#0a1f2c]">$299</span>
+                    <span className="text-sm text-[#43514d]"> /month</span>
                   </div>
-                  <button className="w-full bg-[#635bff] text-white py-2 px-4 rounded-lg font-semibold text-sm hover:bg-[#5851ea] transition-colors mb-4">
+                  <button className="w-full bg-[#0e7c6b] text-white py-2 px-4 rounded-lg font-semibold text-sm hover:bg-[#0a5e51] transition-colors mb-4">
                     Subscribe
                   </button>
-                  <div className="space-y-2 text-xs text-[#425466]">
+                  <div className="space-y-2 text-xs text-[#43514d]">
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>Unlimited historical data</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>15 min data refresh</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>2,000+ third party integrations</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>Advanced reporting</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-[#635bff] mt-0.5">✓</span>
+                      <span className="text-[#0e7c6b] mt-0.5">✓</span>
                       <span>Priority support</span>
                     </div>
                   </div>
@@ -640,7 +640,7 @@ export function Features() {
           </div>
         </div>
         
-        {/* Connect Feature - Stripe-style hero layout */}
+        {/* Connect Feature - Talos-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
@@ -648,31 +648,31 @@ export function Features() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center">
                 <Building2 className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Connect</span>
+              <span className="font-bold text-[#0a1f2c]">Connect</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a1f2c] mb-6">
               Set up multiparty payments and payouts
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#43514d] mb-8 leading-relaxed">
               Integrate payments into your platform or marketplace for end-to-end payments experiences.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#0e7c6b] text-white font-semibold rounded-lg hover:bg-[#0a5e51] transition-colors mb-8"
             >
               Start with Connect{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#0a1f2c] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Issuing for creating card issuing programs
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Instant Payouts for fast payments to users
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Payment Elements for customizable UIs
                 </Link>
               </div>
@@ -684,7 +684,7 @@ export function Features() {
             <div className="bg-white rounded-2xl shadow-lg border border-slate-200 w-full max-w-[400px] mx-auto lg:mx-0 overflow-hidden">
               {/* Mobile app header */}
               <div className="flex items-center justify-between p-4 border-b border-slate-200">
-                <h3 className="font-bold text-lg text-[#0a2540]">Orders</h3>
+                <h3 className="font-bold text-lg text-[#0a1f2c]">Orders</h3>
                 <button className="p-1">
                   <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -700,11 +700,11 @@ export function Features() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 border-b border-slate-100">
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#9125 Hanako Yamada</p>
+                        <p className="font-semibold text-sm text-[#0a1f2c]">#9125 Hanako Yamada</p>
                         <span className="inline-block mt-1 px-2 py-0.5 bg-green-100 text-green-700 text-xs font-semibold rounded">Processing</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#0a2540]">$150.00</span>
+                        <span className="font-bold text-[#0a1f2c]">$150.00</span>
                         <ChevronRight className="text-slate-400 text-sm" />
                       </div>
                     </div>
@@ -717,41 +717,41 @@ export function Features() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 border-b border-slate-100">
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#9124 Jacques Muller</p>
+                        <p className="font-semibold text-sm text-[#0a1f2c]">#9124 Jacques Muller</p>
                         <span className="inline-block mt-1 px-2 py-0.5 bg-green-100 text-green-700 text-xs font-semibold rounded">Processing</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#0a2540]">$200.00</span>
+                        <span className="font-bold text-[#0a1f2c]">$200.00</span>
                         <ChevronRight className="text-slate-400 text-sm" />
                       </div>
                     </div>
                     <div className="flex items-center justify-between py-2 border-b border-slate-100">
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#9123 John Appleseed</p>
-                        <span className="inline-block mt-1 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-semibold rounded">On Hold</span>
+                        <p className="font-semibold text-sm text-[#0a1f2c]">#9123 John Appleseed</p>
+                        <span className="inline-block mt-1 px-2 py-0.5 bg-teal-100 text-teal-700 text-xs font-semibold rounded">On Hold</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#0a2540]">$178.00</span>
+                        <span className="font-bold text-[#0a1f2c]">$178.00</span>
                         <ChevronRight className="text-slate-400 text-sm" />
                       </div>
                     </div>
                     <div className="flex items-center justify-between py-2 border-b border-slate-100">
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#9122 Jane Diaz</p>
+                        <p className="font-semibold text-sm text-[#0a1f2c]">#9122 Jane Diaz</p>
                         <span className="inline-block mt-1 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-semibold rounded">Completed</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#0a2540]">$200.00</span>
+                        <span className="font-bold text-[#0a1f2c]">$200.00</span>
                         <ChevronRight className="text-slate-400 text-sm" />
                       </div>
                     </div>
                     <div className="flex items-center justify-between py-2 border-b border-slate-100">
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#9121 Anna Nowak</p>
+                        <p className="font-semibold text-sm text-[#0a1f2c]">#9121 Anna Nowak</p>
                         <span className="inline-block mt-1 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-semibold rounded">Completed</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#0a2540]">$200.00</span>
+                        <span className="font-bold text-[#0a1f2c]">$200.00</span>
                         <ChevronRight className="text-slate-400 text-sm" />
                       </div>
                     </div>
@@ -764,11 +764,11 @@ export function Features() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 border-b border-slate-100">
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#9120 Wei Qing</p>
+                        <p className="font-semibold text-sm text-[#0a1f2c]">#9120 Wei Qing</p>
                         <span className="inline-block mt-1 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-semibold rounded">Completed</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#0a2540]">$156.00</span>
+                        <span className="font-bold text-[#0a1f2c]">$156.00</span>
                         <ChevronRight className="text-slate-400 text-sm" />
                       </div>
                     </div>
@@ -786,10 +786,10 @@ export function Features() {
                     <span className="text-[10px] text-slate-400">My store</span>
                   </div>
                   <div className="flex flex-col items-center gap-1">
-                    <svg className="w-5 h-5 text-[#635bff]" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#0e7c6b]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                     </svg>
-                    <span className="text-[10px] text-[#635bff] font-semibold">Orders</span>
+                    <span className="text-[10px] text-[#0e7c6b] font-semibold">Orders</span>
                   </div>
                   <div className="flex flex-col items-center gap-1">
                     <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -809,39 +809,39 @@ export function Features() {
           </div>
         </div>
         
-        {/* Issuing Feature - Stripe-style hero layout */}
+        {/* Issuing Feature - Talos-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-teal-600 flex items-center justify-center">
                 <CreditCard className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Issuing</span>
+              <span className="font-bold text-[#0a1f2c]">Issuing</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a1f2c] mb-6">
               Create a card issuing program
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#43514d] mb-8 leading-relaxed">
               Launch, manage, and scale a commercial card program without any setup fees.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#0e7c6b] text-white font-semibold rounded-lg hover:bg-[#0a5e51] transition-colors mb-8"
             >
               Start with Issuing{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#0a1f2c] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Connect for powering platform payments
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Financial Accounts for platforms
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#0e7c6b] hover:text-[#0a5e51] transition-colors text-sm">
                   Capital for platforms
                 </Link>
               </div>
@@ -1008,10 +1008,10 @@ export function Features() {
               <svg className="absolute bottom-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }} viewBox="0 0 400 300" preserveAspectRatio="none">
                 <defs>
                   <marker id="arrowhead-issuing" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                    <polygon points="0 0, 10 3, 0 6" fill="#635bff" />
+                    <polygon points="0 0, 10 3, 0 6" fill="#0e7c6b" />
                   </marker>
                 </defs>
-                <path d="M 50 250 Q 150 200 200 150" stroke="#635bff" strokeWidth="2" fill="none" markerEnd="url(#arrowhead-issuing)" opacity="0.6" />
+                <path d="M 50 250 Q 150 200 200 150" stroke="#0e7c6b" strokeWidth="2" fill="none" markerEnd="url(#arrowhead-issuing)" opacity="0.6" />
               </svg>
             </div>
           </div>
@@ -1025,19 +1025,19 @@ export function Features() {
               className="group relative bg-white p-6 rounded-lg shadow-subtle hover:shadow-card hover:-translate-y-1 transition-all duration-300"
             >
               <div
-                className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-[#635bff] transition-colors rounded-t-lg"
+                className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-[#0e7c6b] transition-colors rounded-t-lg"
                 style={{ backgroundColor: feature.color }}
               ></div>
               <div className="mb-4" style={{ color: feature.color }}>
                 <feature.icon className="text-3xl" />
               </div>
-              <h4 className="text-lg font-bold text-[#0a2540] mb-2">{feature.title}</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h4 className="text-lg font-bold text-[#0a1f2c] mb-2">{feature.title}</h4>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
                 {feature.description}
               </p>
               <Link
                 href={feature.link}
-                className="text-[#635bff] font-semibold text-sm flex items-center group-hover:text-[#0a2540] transition-colors"
+                className="text-[#0e7c6b] font-semibold text-sm flex items-center group-hover:text-[#0a1f2c] transition-colors"
               >
                 Start with {feature.title}{" "}
                 <ChevronRight className="text-sm ml-1" />
