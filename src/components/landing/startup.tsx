@@ -14,20 +14,20 @@ export function Startup() {
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         {/* Header Section */}
         <div className="mb-12 sm:mb-16">
-          <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
+          <h2 className="text-[#0e7c6b] font-bold text-sm uppercase tracking-wide mb-3">
             Built for growth
           </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-4 sm:mb-6">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#0a1f2c] mb-4 sm:mb-6">
             Take your startup further, faster
           </h3>
-          <p className="text-base sm:text-lg text-[#425466] mb-6 sm:mb-8 leading-relaxed max-w-3xl">
-            Startups build on Stripe to launch faster, adapt as they grow, and automate workflows to do more with less. Build your own API-based integration or use our low-to no-code solutions, which are simple enough for easy implementation and powerful enough to scale as fast and as far as you need.
+          <p className="text-base sm:text-lg text-[#43514d] mb-6 sm:mb-8 leading-relaxed max-w-3xl">
+            Startups build on Talos to launch faster, adapt as they grow, and automate workflows to do more with less. Build your own API-based integration or use our low-to no-code solutions, which are simple enough for easy implementation and powerful enough to scale as fast and as far as you need.
           </p>
         </div>
 
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-10 md:pb-36">
-          {/* Card 1: Atlas */}
+          {/* Card 1: Foundry */}
           <div className="bg-white rounded-xl p-1 shadow-lg group md:translate-y-[100px]">
             {/* Embedded White Panel with Two Columns - Now on top */}
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative">
@@ -35,18 +35,18 @@ export function Startup() {
                 <div className="grid grid-cols-2 gap-3">
                   {/* Left Column - Navigation */}
                   <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-[#0a2540] mb-2 sm:mb-3">Atlas</h4>
+                    <h4 className="text-xs sm:text-sm font-bold text-[#0a1f2c] mb-2 sm:mb-3">Foundry</h4>
                     <nav className="space-y-1.5 sm:space-y-2">
-                      <Link href="#" className="block text-xs sm:text-sm text-[#635bff] font-medium pl-2 border-l-2 border-[#635bff]">
+                      <Link href="#" className="block text-xs sm:text-sm text-[#0e7c6b] font-medium pl-2 border-l-2 border-[#0e7c6b]">
                         Overview
                       </Link>
-                      <Link href="#" className="block text-xs sm:text-sm text-[#425466] hover:text-[#635bff] transition-colors pl-2">
+                      <Link href="#" className="block text-xs sm:text-sm text-[#43514d] hover:text-[#0e7c6b] transition-colors pl-2">
                         Company
                       </Link>
-                      <Link href="#" className="block text-xs sm:text-sm text-[#425466] hover:text-[#635bff] transition-colors pl-2">
+                      <Link href="#" className="block text-xs sm:text-sm text-[#43514d] hover:text-[#0e7c6b] transition-colors pl-2">
                         Templates
                       </Link>
-                      <Link href="#" className="block text-xs sm:text-sm text-[#425466] hover:text-[#635bff] transition-colors pl-2">
+                      <Link href="#" className="block text-xs sm:text-sm text-[#43514d] hover:text-[#0e7c6b] transition-colors pl-2">
                         Partners
                       </Link>
                     </nav>
@@ -54,27 +54,27 @@ export function Startup() {
 
                   {/* Right Column - Progress Checklist */}
                   <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-[#0a2540] mb-2 sm:mb-3">RocketRides, Inc.</h4>
+                    <h4 className="text-xs sm:text-sm font-bold text-[#0a1f2c] mb-2 sm:mb-3">RocketRides, Inc.</h4>
                     <div className="space-y-2 sm:space-y-2.5">
                       <div className="flex items-center gap-1.5 sm:gap-2">
                         <CheckCircle2 className="text-green-500 text-base sm:text-lg" />
-                        <span className="text-xs sm:text-sm text-[#0a2540]">Incorporate your company</span>
+                        <span className="text-xs sm:text-sm text-[#0a1f2c]">Incorporate your company</span>
                       </div>
                       <div className="flex items-center gap-1.5 sm:gap-2">
                         <CheckCircle2 className="text-green-500 text-base sm:text-lg" />
-                        <span className="text-xs sm:text-sm text-[#0a2540]">Stock issued for founders</span>
+                        <span className="text-xs sm:text-sm text-[#0a1f2c]">Stock issued for founders</span>
                       </div>
                       <div className="flex items-center gap-1.5 sm:gap-2">
                         <CheckCircle2 className="text-green-500 text-base sm:text-lg" />
-                        <span className="text-xs sm:text-sm text-[#0a2540]">Purchase your shares</span>
+                        <span className="text-xs sm:text-sm text-[#0a1f2c]">Purchase your shares</span>
                       </div>
                       <div className="flex items-center gap-1.5 sm:gap-2">
-                        <FileText className="text-[#425466] text-base sm:text-lg" />
-                        <span className="text-xs sm:text-sm text-[#0a2540]">File 83(b) election</span>
+                        <FileText className="text-[#43514d] text-base sm:text-lg" />
+                        <span className="text-xs sm:text-sm text-[#0a1f2c]">File 83(b) election</span>
                       </div>
                       <div className="flex items-center gap-1.5 sm:gap-2">
-                        <Building2 className="text-[#425466] text-base sm:text-lg" />
-                        <span className="text-xs sm:text-sm text-[#0a2540]">Open a bank account</span>
+                        <Building2 className="text-[#43514d] text-base sm:text-lg" />
+                        <span className="text-xs sm:text-sm text-[#0a1f2c]">Open a bank account</span>
                       </div>
                     </div>
                   </div>
@@ -86,24 +86,24 @@ export function Startup() {
 
             {/* Main Content Area - Now at bottom */}
             <div className="py-10 px-8 h-[180px] transition-all duration-300 group-hover:-mt-4 group-hover:mb-4">
-              {/* Atlas Branding */}
+              {/* Foundry Branding */}
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-4 h-4 bg-orange-500 transform rotate-45"></div>
-                <span className="text-xs font-medium text-[#425466] bg-slate-100 px-2 py-0.5 rounded-full">Atlas</span>
+                <span className="text-xs font-medium text-[#43514d] bg-slate-100 px-2 py-0.5 rounded-full">Foundry</span>
               </div>
 
               {/* Title and Description */}
-              <h5 className="text-lg font-bold text-[#0a2540] mb-2">Incorporate your company</h5>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h5 className="text-lg font-bold text-[#0a1f2c] mb-2">Incorporate your company</h5>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
                 Form a legal entity, issue stock, and start accepting payments.
               </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
-                Learn about Atlas{" "}
+                Learn about Foundry{" "}
                 <ChevronRight className="text-sm ml-1" />
               </Link>
 
@@ -113,7 +113,7 @@ export function Startup() {
           {/* Card 2: Payment Links */}
           <div className="bg-white rounded-xl p-1 shadow-lg group">
             {/* Interactive Panel with Chat and QR Code - Now on top */}
-            <div className="bg-[#f6f9fc] rounded-xl flex gap-10 justify-between items-start relative h-[288px]">
+            <div className="bg-[#f4f7f5] rounded-xl flex gap-10 justify-between items-start relative h-[288px]">
               {/* Left Column - Chat Interface */}
               <div className="bg-white rounded-lg p-3 relative w-full">
                 {/* Close Icon */}
@@ -133,17 +133,17 @@ export function Startup() {
 
                 {/* Chat Messages */}
                 <div className="space-y-2 mb-8 pt-8">
-                  <div className="bg-blue-50 rounded-lg p-2 text-xs text-[#0a2540]">
+                  <div className="bg-blue-50 rounded-lg p-2 text-xs text-[#0a1f2c]">
                     👋 anything I can help with today?
                   </div>
-                  <div className="bg-teal-50 rounded-lg p-2 text-xs text-[#0a2540] ml-auto w-fit">
+                  <div className="bg-teal-50 rounded-lg p-2 text-xs text-[#0a1f2c] ml-auto w-fit">
                     Hey, can I buy a license just for myself?
                   </div>
-                  <div className="bg-blue-50 rounded-lg p-2 text-xs text-[#0a2540]">
+                  <div className="bg-blue-50 rounded-lg p-2 text-xs text-[#0a1f2c]">
                     Sure, in that case I&apos;d recommend our starter plan.
                   </div>
                   <div className="bg-blue-50 rounded-lg p-2 text-xs">
-                    <span className="text-[#635bff]">buy.stripe.com/Ae93Jis</span>
+                    <span className="text-[#0e7c6b]">buy.talos.com/Ae93Jis</span>
                   </div>
                 </div>
               </div>
@@ -151,13 +151,13 @@ export function Startup() {
               {/* Right Column - QR Code Payment */}
               <div className="bg-white rounded-tl-lg p-4 text-center self-end w-full">
                 <div className="mb-4">
-                  <div className="text-2xl font-bold text-[#0a2540]">$19.99</div>
-                  <div className="text-xs text-[#425466] mt-1">per item</div>
+                  <div className="text-2xl font-bold text-[#0a1f2c]">$19.99</div>
+                  <div className="text-xs text-[#43514d] mt-1">per item</div>
                 </div>
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center">
                   <QrCode className="w-[80px] h-[80px]" />
                 </div>
-                <div className="text-xs text-[#425466]">Scan to pay</div>
+                <div className="text-xs text-[#43514d]">Scan to pay</div>
               </div>
               {/* Gradient Overlay - Bottom */}
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-200 to-transparent pointer-events-none rounded-b-xl"></div>
@@ -167,20 +167,20 @@ export function Startup() {
             <div className="py-10 px-8 h-[180px] transition-all duration-300 group-hover:-mt-4 group-hover:mb-4">
               {/* Payment Links Branding */}
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-4 h-4 bg-gradient-to-br from-purple-500 to-teal-500 transform rotate-45"></div>
-                <span className="text-xs font-medium text-[#425466] bg-slate-100 px-2 py-0.5 rounded-full">Payment Links</span>
+                <div className="w-4 h-4 bg-gradient-to-br from-teal-600 to-teal-500 transform rotate-45"></div>
+                <span className="text-xs font-medium text-[#43514d] bg-slate-100 px-2 py-0.5 rounded-full">Payment Links</span>
               </div>
 
               {/* Title and Description */}
-              <h5 className="text-lg font-bold text-[#0a2540] mb-2">Validate your idea</h5>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h5 className="text-lg font-bold text-[#0a1f2c] mb-2">Validate your idea</h5>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
                 Test your product idea by launching payments with little to no code.
               </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 Learn about Payment Links{" "}
                 <ChevronRight className="text-sm ml-1" />
@@ -194,20 +194,20 @@ export function Startup() {
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative">
               <div className="bg-white rounded-tl-lg p-3 sm:p-4 w-full max-w-[380px]">
                 {/* Payment Form */}
-                <div className="text-xs text-[#425466] mb-2">Email</div>
+                <div className="text-xs text-[#43514d] mb-2">Email</div>
                 <input
                   type="email"
                   value="jane.diaz@example.com"
                   readOnly
-                  className="w-full border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#635bff] focus:border-transparent outline-none bg-white mb-4"
+                  className="w-full border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white mb-4"
                 />
-                <div className="text-xs text-[#425466] mb-2">Card information</div>
+                <div className="text-xs text-[#43514d] mb-2">Card information</div>
                 <div className="flex items-center gap-2 mb-2">
                   <input
                     type="text"
                     value="1234 1234 1234 1234"
                     readOnly
-                    className="flex-1 border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#635bff] focus:border-transparent outline-none bg-white"
+                    className="flex-1 border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white"
                   />
                   <div className="flex items-center gap-1.5">
                     <Visa width={32} height={20} />
@@ -220,24 +220,24 @@ export function Startup() {
                     type="text"
                     placeholder="MM/YY"
                     readOnly
-                    className="border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#635bff] focus:border-transparent outline-none bg-white"
+                    className="border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white"
                   />
                   <div className="relative">
                     <input
                       type="text"
                       placeholder="CVC"
                       readOnly
-                      className="w-full border border-slate-200 rounded px-3 py-2 text-sm pr-8 focus:ring-2 focus:ring-[#635bff] focus:border-transparent outline-none bg-white"
+                      className="w-full border border-slate-200 rounded px-3 py-2 text-sm pr-8 focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white"
                     />
                     <CreditCard className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-sm" />
                   </div>
                 </div>
-                <div className="text-xs text-[#425466] mb-2">Name on card</div>
+                <div className="text-xs text-[#43514d] mb-2">Name on card</div>
                 <input
                   type="text"
                   placeholder=""
                   readOnly
-                  className="w-full border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#635bff] focus:border-transparent outline-none bg-white"
+                  className="w-full border border-slate-200 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-[#0e7c6b] focus:border-transparent outline-none bg-white"
                 />
               </div>
               {/* Gradient Overlay - Bottom */}
@@ -248,22 +248,22 @@ export function Startup() {
             <div className="py-10 px-8 h-[180px] transition-all duration-300 group-hover:-mt-4 group-hover:mb-4">
               {/* Checkout Branding */}
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-4 h-4 bg-gradient-to-br from-purple-500 to-blue-500 transform rotate-45"></div>
-                <span className="text-xs font-medium text-[#425466] bg-slate-100 px-2 py-0.5 rounded-full">Checkout</span>
+                <div className="w-4 h-4 bg-gradient-to-br from-teal-600 to-blue-500 transform rotate-45"></div>
+                <span className="text-xs font-medium text-[#43514d] bg-slate-100 px-2 py-0.5 rounded-full">Checkout</span>
               </div>
 
               {/* Title and Description */}
-              <h5 className="text-lg font-bold text-[#0a2540] mb-2">Sell products and services</h5>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h5 className="text-lg font-bold text-[#0a1f2c] mb-2">Sell products and services</h5>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
                 Launch a business with a prebuilt payment page that&apos;s optimized for conversion.
               </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
-                Learn about Atlas{" "}
+                Learn about Foundry{" "}
                 <ChevronRight className="text-sm ml-1" />
               </Link>
 
@@ -276,18 +276,18 @@ export function Startup() {
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative">
               <div className="bg-white rounded-tl-lg p-3 sm:p-4 w-full max-w-[380px]">
                 {/* Cloud Token Analytics */}
-                <h4 className="text-xs sm:text-sm font-bold text-[#0a2540] mb-4">Cloud token</h4>
+                <h4 className="text-xs sm:text-sm font-bold text-[#0a1f2c] mb-4">Cloud token</h4>
 
                 {/* Period Metrics */}
                 <div className="flex gap-3 sm:gap-4 mb-4">
                   <div className="w-full">
-                    <div className="text-xs text-[#425466]">Previous period</div>
-                    <div className="text-base sm:text-lg font-bold text-[#0a2540]">80,250,068</div>
+                    <div className="text-xs text-[#43514d]">Previous period</div>
+                    <div className="text-base sm:text-lg font-bold text-[#0a1f2c]">80,250,068</div>
                   </div>
                   <div className="hidden sm:block"><Separator orientation="vertical" /></div>
                   <div className="w-full">
-                    <div className="text-xs text-[#425466]">Current period</div>
-                    <div className="text-base sm:text-lg font-bold text-[#0a2540]">68,491,224</div>
+                    <div className="text-xs text-[#43514d]">Current period</div>
+                    <div className="text-base sm:text-lg font-bold text-[#0a1f2c]">68,491,224</div>
                   </div>
                 </div>
 
@@ -302,7 +302,7 @@ export function Startup() {
                       />
                     ))}
                   </div>
-                  <div className="flex justify-around text-[11px] text-[#425466] mt-1 px-2">
+                  <div className="flex justify-around text-[11px] text-[#43514d] mt-1 px-2">
                     <span>Apr 24</span>
                     <span>Apr 25</span>
                     <span>Apr 26</span>
@@ -321,20 +321,20 @@ export function Startup() {
             <div className="py-10 px-8 h-[180px] transition-all duration-300 group-hover:-mt-4 group-hover:mb-4">
               {/* Cloud Token Branding */}
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-4 h-4 bg-gradient-to-br from-purple-500 to-blue-500 transform rotate-45"></div>
-                <span className="text-xs font-medium text-[#425466] bg-slate-100 px-2 py-0.5 rounded-full">Cloud token</span>
+                <div className="w-4 h-4 bg-gradient-to-br from-teal-600 to-blue-500 transform rotate-45"></div>
+                <span className="text-xs font-medium text-[#43514d] bg-slate-100 px-2 py-0.5 rounded-full">Cloud token</span>
               </div>
 
               {/* Title and Description */}
-              <h5 className="text-lg font-bold text-[#0a2540] mb-2">Track usage and metrics</h5>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h5 className="text-lg font-bold text-[#0a1f2c] mb-2">Track usage and metrics</h5>
+              <p className="text-sm text-[#43514d] leading-relaxed mb-4">
                 Monitor your cloud token usage with real-time analytics and insights.
               </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#0e7c6b] hover:text-[#0a5e51] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 Learn about Analytics{" "}
                 <ChevronRight className="text-sm ml-1" />

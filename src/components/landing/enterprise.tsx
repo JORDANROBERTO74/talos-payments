@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BMWLogo } from "../commons/bmw";
-import { AmazonLogo } from "../commons/amazon";
-import { MaerskLogo } from "../commons/maersk";
-import { TwilioLogo } from "../commons/twilio";
+import { VektraLogo } from "../commons/vektra";
+import { NorthwindLogo } from "../commons/northwind";
+import { MarlinLineLogo } from "../commons/marlin-line";
+import { SignalhubLogo } from "../commons/signalhub";
 import { CreditCard, Building2, ChevronRight } from "lucide-react";
 
 type BrandData = {
@@ -27,12 +27,12 @@ type BrandData = {
 
 const BRAND_DATA: BrandData[] = [
   {
-    name: "BMW",
-    image: "/images/bmw.webp",
+    name: "Vektra",
+    image: "/images/vektra.svg",
     metrics: [
       {
         value: "Millions",
-        description: ["BMW owners using", "ConnectedDrive Store"],
+        description: ["Vektra owners using", "Vektra Drive Store"],
       },
       {
         value: "350+",
@@ -43,48 +43,48 @@ const BRAND_DATA: BrandData[] = [
       {
         name: "Payments",
         icon: "payments",
-        color: "text-cyan-500",
+        color: "text-teal-600",
       },
       {
         name: "Connect",
         icon: "account_balance",
-        color: "text-purple-500",
+        color: "text-teal-600",
       },
     ],
-    headline: "Learn why BMW chose FractalGrid to power ecommerce and payments",
-    logoComponent: BMWLogo,
+    headline: "Learn why Vektra chose Talos to power ecommerce and payments",
+    logoComponent: VektraLogo,
   },
   {
-    name: "Amazon",
-    image: "/images/amazon.webp",
+    name: "Northwind",
+    image: "/images/northwind.svg",
     metrics: [
       {
         value: "5+",
-        description: ["Amazon businesses on Stripe including", "Prime, Audible, and Amazon Pay"],
+        description: ["Northwind businesses on Talos including", "Northwind Retail, and Northwind Pay"],
       },
       {
         value: "50+",
-        description: ["Payment methods available on Stripe"],
+        description: ["Payment methods available on Talos"],
       },
     ],
     products: [
       {
         name: "Payments",
         icon: "payments",
-        color: "text-cyan-500",
+        color: "text-teal-600",
       },
       {
         name: "Connect",
         icon: "account_balance",
-        color: "text-purple-500",
+        color: "text-teal-600",
       },
     ],
-    headline: "See how Amazon simplified cross-border payments with Stripe",
-    logoComponent: AmazonLogo,
+    headline: "See how Northwind simplified cross-border payments with Talos",
+    logoComponent: NorthwindLogo,
   },
   {
-    name: "Maersk",
-    image: "/images/maersk.webp",
+    name: "Marlin Line",
+    image: "/images/marlin-line.svg",
     metrics: [
       {
         value: "130",
@@ -99,24 +99,24 @@ const BRAND_DATA: BrandData[] = [
       {
         name: "Payments",
         icon: "payments",
-        color: "text-cyan-500",
+        color: "text-teal-600",
       },
       {
         name: "Connect",
         icon: "account_balance",
-        color: "text-purple-500",
+        color: "text-teal-600",
       },
     ],
-    headline: "See how Maersk tapped into new technology to make it easier to ship around the world",
-    logoComponent: MaerskLogo,
+    headline: "See how Marlin Line tapped into new technology to make it easier to ship around the world",
+    logoComponent: MarlinLineLogo,
   },
   {
-    name: "Twilio",
-    image: "/images/twilio.webp",
+    name: "Signalhub",
+    image: "/images/signalhub.svg",
     metrics: [
       {
         value: "+5.5%",
-        description: ["Uplift from Stripe's Global", "Payments Infrastructure"],
+        description: ["Uplift from Talos's Global", "Payments Infrastructure"],
       },
       {
         value: "+1%",
@@ -127,39 +127,39 @@ const BRAND_DATA: BrandData[] = [
       {
         name: "Payments",
         icon: "payments",
-        color: "text-cyan-500",
+        color: "text-teal-600",
       },
       {
-        name: "Stripe Sigma",
+        name: "Talos Lens",
         icon: "analytics",
-        color: "text-pink-500",
+        color: "text-amber-500",
       },
     ],
-    headline: "See how Twilio increased authorization rates by 10% with Stripe",
-    logoComponent: TwilioLogo,
+    headline: "See how Signalhub increased authorization rates by 10% with Talos",
+    logoComponent: SignalhubLogo,
   },
 ];
 
 const BRAND_OVERLAYS: Record<string, { gradient: string; shadow: string; borderColor: string }> = {
-  BMW: {
-    gradient: "from-blue-900/30 via-blue-800/40 to-blue-900/60",
-    shadow: "rgba(30,58,138,0.4)",
-    borderColor: "border-blue-600",
+  Vektra: {
+    gradient: "from-teal-900/30 via-teal-800/40 to-teal-900/60",
+    shadow: "rgba(14,124,107,0.35)",
+    borderColor: "border-teal-700",
   },
-  Amazon: {
-    gradient: "from-yellow-900/30 via-yellow-800/40 to-yellow-900/60",
-    shadow: "rgba(180,83,9,0.4)",
-    borderColor: "border-yellow-600",
+  Northwind: {
+    gradient: "from-amber-900/30 via-amber-800/40 to-amber-900/60",
+    shadow: "rgba(242,184,75,0.3)",
+    borderColor: "border-amber-500",
   },
-  Maersk: {
-    gradient: "from-cyan-900/30 via-cyan-800/40 to-cyan-900/60",
-    shadow: "rgba(14,116,144,0.4)",
-    borderColor: "border-cyan-600",
+  "Marlin Line": {
+    gradient: "from-teal-900/40 via-teal-800/30 to-teal-900/60",
+    shadow: "rgba(10,94,81,0.4)",
+    borderColor: "border-teal-600",
   },
-  Twilio: {
-    gradient: "from-red-900/30 via-red-800/40 to-red-900/60",
-    shadow: "rgba(153,27,27,0.4)",
-    borderColor: "border-red-600",
+  Signalhub: {
+    gradient: "from-teal-900/30 via-slate-800/40 to-teal-900/60",
+    shadow: "rgba(14,124,107,0.3)",
+    borderColor: "border-teal-500",
   },
 };
 
@@ -229,32 +229,32 @@ export function Enterprise() {
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         {/* Header Section - Top */}
         <div className="mb-16">
-          <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
+          <h2 className="text-[#0e7c6b] font-bold text-sm uppercase tracking-wide mb-3">
             Enterprise reinvention
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a1f2c] mb-6">
             Bring agility to your enterprise
           </h3>
-          <p className="text-lg text-[#425466] mb-8 leading-relaxed max-w-3xl">
+          <p className="text-lg text-[#43514d] mb-8 leading-relaxed max-w-3xl">
             Quickly build great payments experiences with a{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#0e7c6b] hover:underline">
               professional services team
             </Link>
             ,{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#0e7c6b] hover:underline">
               certified partners
             </Link>
             , and{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
-              Salesforce
+            <Link href="#" className="text-[#0e7c6b] hover:underline">
+              Relay
             </Link>
             ,{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#0e7c6b] hover:underline">
               SAP
             </Link>
             , and{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
-              Stripe App Marketplace
+            <Link href="#" className="text-[#0e7c6b] hover:underline">
+              Talos App Marketplace
             </Link>
             .
           </p>
@@ -262,9 +262,9 @@ export function Enterprise() {
           {/* CTA Button */}
           <Link
             href="#"
-            className="inline-flex items-center justify-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 bg-[#0e7c6b] text-white font-semibold rounded-lg hover:bg-[#0a5e51] transition-colors"
           >
-            Explore FractalGrid for enterprises{" "}
+            Explore Talos for enterprises{" "}
             <ChevronRight className="text-sm ml-2" />
           </Link>
         </div>
@@ -283,11 +283,11 @@ export function Enterprise() {
                 {selectedBrand.metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#0a2540]"} pl-4`}
+                    className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#0a1f2c]"} pl-4`}
                   >
-                    <p className="text-2xl font-bold text-[#0a2540] mb-1">{metric.value}</p>
+                    <p className="text-2xl font-bold text-[#0a1f2c] mb-1">{metric.value}</p>
                     {metric.description.map((line, lineIndex) => (
-                      <p key={lineIndex} className="text-base text-[#425466]">
+                      <p key={lineIndex} className="text-base text-[#43514d]">
                         {line}
                       </p>
                     ))}
@@ -296,16 +296,16 @@ export function Enterprise() {
 
                 {/* Products Used */}
                 <div
-                  className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#0a2540]"} pl-4`}
+                  className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#0a1f2c]"} pl-4`}
                 >
-                  <p className="text-lg text-[#425466] mb-3 font-bold">Products used</p>
+                  <p className="text-lg text-[#43514d] mb-3 font-bold">Products used</p>
                   <div className="space-y-2">
                     {selectedBrand.products.map((product, index) => {
                       const IconComponent = product.icon === "payments" ? CreditCard : Building2;
                       return (
                         <div key={index} className="flex items-center gap-2">
-                          <IconComponent className="text-xl text-[#0a2540]" />
-                          <span className="text-base text-[#0a2540]">{product.name}</span>
+                          <IconComponent className="text-xl text-[#0a1f2c]" />
+                          <span className="text-base text-[#0a1f2c]">{product.name}</span>
                         </div>
                       );
                     })}
