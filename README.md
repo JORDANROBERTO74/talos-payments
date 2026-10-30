@@ -72,4 +72,4 @@ Deployed on Vercel from `main`; the production domain is assigned by the project
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Proprietary, all rights reserved. See [LICENSE](LICENSE) and [docs/provenance.md](docs/provenance.md).
